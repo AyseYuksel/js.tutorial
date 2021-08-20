@@ -1,0 +1,92 @@
+<html>
+<head>
+<title>javascript</title>
+<style>
+#div1{
+	height:80px;
+	width:100%;
+	background-color:yellow;
+}
+
+#div2{
+	height:80px;
+	width:100%;
+	background-color:red;
+}
+
+#div3{
+	height:80px;
+	width:100%;
+	background-color:blue;
+}
+
+#div4{
+	height:80px;
+	width:100%;
+	background-color:green;
+}
+#div5{
+	height:80px;
+	width:100%;
+	background-color:yellow;
+}
+
+}
+
+</style>
+</head>
+
+
+<body>
+
+<div id="div1" class="class1" name="name1">HELLO WORLD</div>
+<div id="div2" class="class1" name="name1"></div>
+<div id="div3" class="class1" name="name2"></div>
+<div id="div4" class="class1" name="name3"></div>
+
+
+<div id="div5">any</div>
+
+<script>
+
+// Assigning the text in the div to a variable and then writing this text in another div with innerHTML.
+var a=document.getElementById("div1").innerHTML;
+document.getElementById("div3").innerHTML=a;
+//now HELLO WORLD writes in both div 1 and div 3
+
+//The innerText property is not used with html tags.
+document.getElementById("div2").innerText="<b>javascript</b>"; //output= <b>javascript<b>
+document.getElementById("div4").innerHTML="<b>javascript</b>"; //output=javascript //->bold
+
+// Assigning the text in the div to a variable and then writing this text in another div with innerText.
+var b=document.getElementById("div2").innerText;
+document.getElementById("div1").innerHTML=b; //output  javascript //-> bold 
+document.getElementById("div3").innerText=b;  //output <b>javascript</b>
+
+//delete div with remove property.
+document.getElementById("div1").remove();
+//There is no longer a div with id div 1 in the body tag
+
+
+
+//Adding css properties to html part with javascript
+//in javascript "-" is ignored and the 2nd word starts with a capital letter. 
+//For example, fontSize is used instead of font-size, and backgroundColor is used instead of background-color.
+
+document.getElementById("div5").style.backgroundColor="blue";
+document.getElementById("div5").style.marginTop="50px";
+document.getElementById("div5").style.fontSize="50px";
+document.getElementById("div5").style.color="yellow";
+
+//shortcut
+var a=document.getElementById("div5");
+a.style.color="blue";
+a.style.backgroundColor="orange";
+a.style.fontSize="50px";
+
+
+</script>
+
+
+</body>
+</html>
