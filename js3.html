@@ -1,0 +1,164 @@
+<html>
+
+<head><title>javascript</title> </head>
+<body>
+
+<div id="div1" ></div>
+<div id="div2"> </div>
+
+<script>
+
+//arraysort
+
+
+//var a=["apple","melon","banana","quince","apricot"];
+//document.getElementById("div1").innerHTML=a+"<br><br>";
+
+//sort alphabetically
+//document.writeln(a.sort()); //output=apple,apricot,banana,melon,quince
+
+//document.write('<br>');
+
+//document.writeln(a.reverse());//reverse sort, output => 
+//                            //apricot,quince,banana,melon,apple   
+
+
+document.write('<br>');
+//number sort
+var b=["24,13,18,8,4,9"];
+
+//document.getElementById("div1").innerHTML=b;
+//b.sort();
+//sort array number alphabetically
+//document.getElementById("div2").innerHTML=b; 
+
+//sorting from smallest to largest
+function siralama(){
+b.sort(function(x,y){return x-y});
+document.write(b);
+}
+//siralama();
+
+
+//sorting from largest to smallest
+function siralama(){
+b.sort(function(x,y){return y-x});
+document.write(b);
+}
+//siralama();
+
+
+//add object in array
+ var c=[{brand:"Toyota",year:2013},
+        {brand:"Mercedes",year:2018},
+        {brand:"Opel",year:2011}];
+
+function cars(){
+document.getElementById("div1").innerHTML=
+c[0].brand+" "+c[0].year+'<br>'+
+c[1].brand+" "+c[1].year+'<br>'+
+c[2].brand+" "+c[2].year+'<br>';
+}
+cars();
+
+//output
+/*
+Toyota 2013
+Mercedes 2018
+Opel 2011
+*/
+
+//sort by year
+function sortbyYear(){
+c.sort(function(x,y){return x.year-y.year });
+cars();
+}
+
+sortbyYear();
+/*
+Opel 2011
+Toyota 2013
+Mercedes 2018
+*/
+
+//ARRAY ITERATION
+//foreach
+var numbers1=[45,60,27,35,102,55,8];
+var tempvalue="";
+
+function f(value1,index,array1){
+tempvalue=tempvalue+value1+'<br>';
+}
+
+numbers1.forEach(f);
+document.getElementById("div1").innerHTML=tempvalue;
+
+/*output 
+45
+60
+27
+35
+102
+55
+8
+*/
+
+//map feature
+function triplearray(value1,index1,array1){
+return value1*3;
+}
+
+var numbers2=numbers1.map(triplearray);
+document.getElementById("div1").innerHTML=numbers2;
+//output->135,180,81,105,306,165,24
+
+//filter feature 
+function filt(value1,index,array1){
+return value1>30;
+}
+var numbers3=numbers1.filter(filt);
+
+//var numbers1=[45,60,27,35,102,55,8];
+document.writeln(numbers3); //output-> 45,60,35,102,55
+
+//reduce feature-> return to total value of elements
+function totalval(total,value,index,array){
+return total+value; //total's initial value is 0 
+}
+var numbers4=numbers1.reduce(totalval);
+document.writeln(numbers4); //332
+
+//if we dont want to total's initial value is 0 :
+var numbers5=numbers1.reduce(totalval,100); //total's initial value is 100 now.
+document.writeln(numbers5); //432
+
+//every()
+function everyfunc(value,index,array){
+return value>18;
+}
+var numbers6=numbers1.every(everyfunc);
+document.writeln(numbers6); //output= false  -> Returns true if all elements of the array match the condition, false otherwise.
+
+//some() 
+var numbers7=numbers1.some(everyfunc);
+document.writeln(numbers7); //It returns true if even a single element of the array matches the condition, and false if it doesn't.
+
+//find()
+var numbers8=numbers1.find(everyfunc);
+document.writeln(numbers8); // in this array, return to first value of higher than 18 -> output= 45
+
+//findIndex() 
+var numbers9=numbers1.findIndex(everyfunc);
+document.writeln(numbers9); // in this array, return to first value's index of higher than 18 -> output= 45
+
+
+var newval=[6,3,2,1,5,2,6,3,2,1,6,7,8,3];
+var newval1=newval.indexOf(2); //output=2 -> The first index with 2 elements
+document.writeln(newval1);
+
+var newval2=newval.lastIndexOf(2);
+document.writeln(newval2); //output=8 -> The last index with 2 elements
+
+</script>
+</body>
+</html>

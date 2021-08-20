@@ -1,0 +1,162 @@
+<html>
+<head>
+<title>JavaScript2</title>
+</head>
+<body>
+
+<script>
+//creating function without parameter
+function f1(){
+document.write("ANY");
+}
+
+//f1();
+
+//creating function with parameter
+function f2(sayi1,sayi2){
+document.write(sayi1+sayi2);
+}
+//f2(6,9);
+
+
+function f3(name1,surname1){
+document.write("Hello  "+name1+"   "+surname1);
+}
+//f3("ayse","yuksel");
+
+function f4(name2,surname2){
+return name2+" "+surname2;
+}
+//document.write(f4("ayse","yuksel"));
+
+var x=f4("ayse","yuksel");
+//document.write(x);
+
+
+function saniyecevir(dakika){
+var sure=60;
+var saniyem=dakika*sure;
+return saniyem;
+}
+//var saniye=saniyecevir(2);
+//document.write("2 dakika  "+saniye+"  saniyedir. ")
+
+
+//number features
+var x=3;
+document.writeln(typeof x); //number
+x=x.toString();
+document.writeln(typeof x); //string
+
+var t=6;
+t=t.toExponential();
+//document.writeln(t);
+
+var z=123.456789;
+z=z.toFixed(3);
+//document.write(z); //123.456
+
+//string to number 
+var  y="6";
+y=Number(y);
+document.write(typeof y);//number
+
+var i="3.15";
+//i=parseInt(i);
+//document.writeln(i); //3 ->integer part
+
+t=parseFloat(i); //3.15 ->float part
+document.writeln(t);
+
+//string features;
+var metin="merhaba dunya";
+document.writeln(metin.length); //count character on the string 
+document.writeln(metin.indexOf("hab")); 
+document.writeln(metin.search("mer")); //0
+
+document.writeln(metin.slice(3)); //output ->haba dunya
+document.writeln(metin.slice(3,6));// output-> hab
+document.writeln(metin.slice(-8,-3)); //ba du
+
+document.writeln(metin.substring(7)); //
+document.writeln(metin.substring(7,10)); 
+document.writeln(metin.substr(7,5)); //output= duny (start from 7th char to 12th char)
+document.writeln(metin.replace("dunya","world")); 
+document.writeln(metin.replace(/MERHabA/i,"hello")); 
+
+document.writeln(metin.toUpperCase()); //output= MERHABA DUNYA
+document.writeln(metin.toLowerCase()); //output= merhaba dunya
+
+var yeni1="Merhaba";
+var yeni2="Dunya";
+document.writeln(yeni1.concat("  ",yeni2));
+
+var bosluk="     Merhaba DUNYA     ";
+document.writeln(bosluk.trim());
+
+document.writeln(yeni1.charAt(3)); //h
+
+var dizi="a,b,c,d";
+var dizi1=dizi.split(",");
+document.writeln(dizi1[0]); //a
+
+//arrays
+var colours=["black","yellow","blue","green"];
+document.writeln(colours);
+document.writeln(colours[0]);//black -> first index of array
+
+var colour1=colours[1]; //colour1=yellow
+document.writeln(colour1);
+
+var methods=colours.length;
+document.writeln(methods); //4
+
+document.writeln(colours[colours.length-1]); //green-> last index of array
+
+//add 
+colours.push("gray");
+document.writeln(colours);
+
+//delete
+colours.pop(); //suctract to last index of array
+document.writeln(colours);
+
+//substract to first index of array
+colours.shift();
+document.writeln(colours);
+
+//add an element to first index of array
+colours.unshift("white");
+document.writeln(colours);
+
+document.writeln("----------");
+
+//slice
+document.writeln(colours)
+document.writeln(colours.slice(1)); // output colours[1]..colours[lastindex]
+
+document.writeln(colours.slice(1,3)); //output colours[1] colours[2]
+
+colours.splice(2,0,"blue","red"); //add to 2th index of array to "blue" ,add to 3th index of array to "red"
+document.write(colours); 
+
+//delete element with splice() method
+colours.splice(0,1); // start to 0. index of array and delete 1 element
+colours.splice(1,3); //start to 1th index of array and delete 3 element
+
+document.writeln("--------------------------------------------------------------------------------------------");
+
+//concat feature
+var numbers=["one","six","nine","seven"];
+var food=["hamburger","rice","salad"];
+document.writeln(numbers.concat(food));
+
+// Array Sort
+
+
+
+</script>
+
+
+</body>
+</html>

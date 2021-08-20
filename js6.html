@@ -1,0 +1,203 @@
+<html>
+<head><title>Javascript</title></head>
+
+<body>
+
+
+<script>
+
+//IF-ELSE 
+/*
+var b=3;
+var a=5;
+if(b<a){
+document.writeln("a value bigger than b value");
+}else{
+document.writeln("b value bigger than a value");
+}
+*/
+
+/*
+var age=window.prompt("please enter your age.",age);
+//If the user doesnt enter the age value, the system will accept the value of the age variable as 0. 
+
+
+if(age<18){
+document.writeln("you are too young to enter");
+}else{
+document.writeln("your age appropriate for entry");
+}
+*/
+
+//TERNARY OPERATOR
+//var age=prompt("Enter your age",0); //If the user doesnt enter the age value, the system will accept the value of the age variable as 0. 
+
+//var enterpermission=(age<18)? "your age too young to enter" : "your age appropriate for entry";
+
+//document.writeln(enterpermission+'<br><br>');
+
+//SWITCH-CASE 
+var fruits=["Apple","Quince","Banana","Melon"];
+var a=Math.round(Math.random()*10); // It will generate random numbers between 0 and 10. It will create cases between 0 and 3 for the array
+
+switch(a){
+
+case 0:
+document.writeln("choosen number : "+" "+a+'<br>'+"choosen fruit : "+"  "+fruits[a]);
+break;
+case 1:
+document.writeln("choosen number : "+" "+a+'<br>'+"choosen fruit : "+"  "+fruits[a]);
+break;
+case 2:
+document.writeln("choosen number : "+" "+a+'<br>'+"choosen fruit : "+"  "+fruits[a]);
+break;
+case 3:
+document.writeln("choosen number : "+" "+a+'<br>'+"choosen fruit : "+"  "+fruits[a]);
+break;
+default:
+document.writeln("wrong number enter"+'<br>'+"the number is : "+a);
+break;
+//output
+/*
+choosen number : 3
+choosen fruit : Melon
+
+wrong number enter
+the number is : 4
+
+*/
+
+}
+document.writeln('<br><br>');
+//For Loop
+
+for(i=0;i<=5;i++){
+document.writeln(i+'<br>');
+}
+//output
+/*
+0
+1
+2
+3
+4
+5
+
+*/
+document.writeln('<br><br>');
+
+for(i=0;i<fruits.length;i++){
+document.writeln(fruits[i]);
+}
+
+document.writeln('<br><br>');
+//Multiplication table for numbers from 1 to 10
+for(i=1;i<=10;i++){
+for(j=1;j<=10;j++){
+document.writeln(i+" x "+j+" = "+i*j+'<br>');
+}
+document.writeln("----------------------------"+'<br>');
+}
+//output :
+/*
+1 x 1 = 1
+1 x 2 = 2
+1 x 3 = 3
+1 x 4 = 4
+1 x 5 = 5
+1 x 6 = 6
+1 x 7 = 7
+1 x 8 = 8
+1 x 9 = 9
+1 x 10 = 10
+----------------------------
+2 x 1 = 2
+2 x 2 = 4
+2 x 3 = 6
+2 x 4 = 8
+2 x 5 = 10
+2 x 6 = 12
+2 x 7 = 14
+2 x 8 = 16
+2 x 9 = 18
+2 x 10 = 20
+----------------------------
+.
+.
+.
+*/
+//While loop
+var k=0;
+while(k<fruits.length){
+document.writeln(fruits[k]);
+k++
+}
+
+//Do while
+var m=0;
+do{
+document.writeln("Hello world");
+m++;
+}while(m<=5);
+
+document.writeln('<br><br>');
+
+var cars=["toyota","nissan","mercedes","bmw","renault"];
+
+//for in loop
+var a;
+for(a in cars){
+document.writeln(cars[a]); //output->toyota nissan mercedes bmw renault. a holds index values here
+}
+
+//for of loop
+for(a of cars){
+document.writeln(a); //output->toyota nissan mercedes bmw renault. a holds array values here
+}
+
+document.writeln('<br><br>');
+
+//break  
+//
+for(i=0;i<10;i++){
+document.writeln(i);
+
+if(i==5){
+break;
+}
+}//output= 0 1 2 3 4 5
+
+//
+for(i=0;i<10;i++){
+if(i==5){
+break;
+document.writeln(i);
+}
+}//output= 0 1 2 3 4 
+
+
+
+//continue
+
+for(i=0;i<10;i++){
+document.writeln(i);
+if(i==5){
+continue;
+}
+}
+//output= 0 1 2 3 4 5 6 7 8 9
+
+
+for(i=0;i<10;i++){
+
+if(i==5){
+continue;
+}
+document.writeln(i);
+}
+//output= 0 1 2 3 4 6 7 8 9
+
+</script>
+
+</body>
+</html>

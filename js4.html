@@ -1,0 +1,130 @@
+<html>
+<head><title>javascript</title></head>
+
+
+<body>
+
+<script>
+
+
+var employee={name:"jack",
+			  surname:"brown",
+			  salary:5000,
+			  dept:"tech"};
+			  
+document.writeln(employee.name); //output : jack 
+document.writeln(employee["name"]); //output : jack 
+
+var a=employee.surname; 
+document.writeln(a);//output: brown
+
+// Define a function inside the object
+var employee2={name1:"max",
+			  surname1:"smith",
+			  salary:2000,
+			  dept:"service",
+			
+			fullname: function(){
+			return this.name1+"  "+this.surname1;	
+			},
+			
+			salary_raise: function(){
+			var sal=this.salary+(this.salary*0.1);
+			return sal;
+			}
+};
+document.writeln(employee2.fullname()); //output -> max smith
+document.writeln(employee2.salary_raise()); //output-> 2200
+
+document.writeln('<br><br>');
+
+
+//DATE FEATURE
+
+//var str="a" == var str=new String("a") 
+//str is an object to String class
+
+
+var date1=new Date(); //date an object to Date class
+document.writeln(date1+'<br>');
+//output= Thu Aug 19 2021 11:23:40 GMT+0300 (GMT+03:00) ->current date
+
+//creating spesific date with date object
+var date2=new Date(1998,7,24,21,30,40);
+document.writeln(date2+'<br>');
+//output=Mon Aug 24 1998 21:30:40 GMT+0300 (GMT+03:00)
+//date parameters-> year month day hour minute second
+
+document.writeln(date2.toUTCString()+'<br>');
+//output=Mon, 24 Aug 1998 18:30:40 GMT
+
+//converts to date in milliseconds
+document.write(date2.getTime()+'<br>'); //output->903983440000
+
+//view the year, month, day ,hour ,minute ,second
+document.write(date1.getFullYear()+'<br>'); //output->2021
+document.write(date1.getMonth()+1+'<br>'); //output-> 8 //months counting start 0
+document.write(date1.getDate()+'<br>'); //output->19 (day)
+document.write(date1.getDay()+'<br>');// output=4 ->Thursday
+document.write(date1.getHours()+'<br>'); //11 (currently hour)
+document.write(date1.getMinutes()+'<br>'); //40 (currently minute)
+document.write(date1.getSeconds()+'<br>'); //53 (currently second)
+
+//set date
+date1.setFullYear(2013);
+date1.setMonth(9);
+date1.setDate(6);
+document.writeln(date1); //output-> Sun Oct 06 2013 11:45:14 GMT+0300 (GMT+03:00)
+
+document.writeln('<br><br>');
+
+//MATH LIBRARY
+var number1=Math.PI;
+document.writeln(number1); //output=3.141592653589793
+document.writeln(Math.round(number1)); //3
+
+document.writeln(Math.round(6.2)); //6
+document.writeln(Math.round(6.8)); //7
+
+document.writeln(Math.ceil(6.2)); //7
+document.writeln(Math.ceil(6.8)); //7
+
+
+document.writeln(Math.floor(6.2)); //6
+document.writeln(Math.floor(6.8)); //6
+
+//exponentiation->pow
+var n1=5;
+var n2=3;
+document.writeln(Math.pow(5,3)); //5^3 / output=125
+document.writeln(Math.pow(n1,n2)); // 5^3 /  output=125
+
+//square root -> sqrt
+document.writeln(Math.sqrt(81,3)); //9
+document.writeln(Math.sqrt(64)); //8
+document.writeln(Math.sqrt(n1,n2)); //2.23606797749979 
+
+//absolute value -> abs
+document.writeln(Math.abs(-24)); //24
+var n3=-98;
+document.writeln(Math.abs(n3)); //98
+
+document.writeln(Math.sin(0)); //0
+document.writeln(Math.cos(58)); //0.11918013544881928
+
+document.writeln(Math.min(n1,n2));//3
+document.writeln(Math.max(n1,n2));//5
+document.writeln(Math.max(4,2,6,23,43,12,33,2,56,3,1)); //56
+
+//random=Returns any value between 0 and 1
+document.writeln(Math.random()); //output=0.764560358125324
+document.writeln(Math.random()*10); //random=Returns any value between 0 and 10 //4.713665862037482
+document.writeln(Math.round(Math.random()*10));  //random=Returns any integer value between 0 and 10 ->output=6
+
+
+</script>
+
+
+
+</body>
+</html>

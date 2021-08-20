@@ -1,0 +1,120 @@
+<html>
+<head><title>Javascript</title></head>
+<body>
+
+
+<script>
+
+//TYPE CONVERSION
+var a=String(10);
+document.writeln(typeof a);//output=string
+
+var b=10;
+var c=String(b);
+document.writeln(typeof c); //output=string
+
+var d=String(Date());
+document.writeln(typeof d);//output=string
+
+document.writeln(typeof new Date()); //output=object
+document.writeln(typeof new String()); //output=object
+
+b=b.toString();
+document.writeln(b+" "+typeof b); // output=10 string
+
+var f=Number("100");
+document.writeln(typeof f);//output=number
+
+var g=Number(new Date());
+document.writeln(typeof g);//output=number 
+
+var h=Number(true); 
+document.writeln(typeof h);//output=number
+
+var fruit=["apple","banana","orange"];
+document.writeln(fruit.constructor);
+//output=  function Array() { [native code] } //Returns constructor function on object's type
+
+var i=5;
+document.writeln(i.constructor);
+//output= function Number() { [native code] }
+
+var j=false;
+document.writeln(j.constructor);
+//output= function Boolean() { [native code] }
+
+document.writeln('<br><br><br>');
+//check if type is array
+function check(x){
+return x.constructor.toString().indexOf("Array")>-1;
+}
+var k=check(fruit); //Is variable a holding an array?
+document.writeln(k); //output=true
+
+var l=check(i); // i is a number
+document.writeln(l); //output= false
+
+document.write('<br><br><br>');
+
+//COMPARISON OPERATORS
+var m=10;
+var n="10";
+
+var o=(m == n);
+document.writeln(o); //output= true
+var p=(m === n); 
+document.writeln(p); //output= false
+//If there are 3 equal signs, it also checks the data type.
+// If there are 2 equal signs, it just compares the values
+
+var r=10;
+var s=(r === m);
+document.writeln(s); //output=true
+
+var t=100;
+var u=(r!=t);
+document.writeln(u); //true
+var v=(r==t);
+document.writeln(v); //false
+
+var x=(m!==n); 
+document.writeln(x); //true
+ 
+var y=(m!==r);
+document.writeln(y); //false
+//If there are !== signs, it also checks the data type. it returns 0 if 2 values are equal.
+// If there are != signs, it just compares the values
+
+document.writeln(t>r); //true
+
+//LOGICAL OPERATORS
+var a=15;
+var b=20;
+var c=25;
+
+var d=(a<b)&&(b<c);
+document.writeln(d); //true
+
+var e=(a>=b)&&(b<c);
+document.writeln(e);//false
+
+var f=(a>=b)||(b<c);
+document.writeln(f); //true
+
+var g=(a>=b)||(b>c);
+document.writeln(g); //false
+
+var h=(a>b);
+var i=(!(a>b));
+document.writeln(h); //false
+document.writeln(i); //true
+
+var j=!(a>=b)&&(b<c);
+document.writeln(j);//true
+ 
+
+</script>
+
+
+</body>
+</html>

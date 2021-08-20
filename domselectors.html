@@ -1,0 +1,80 @@
+<html>
+<head>
+<title>javascript-DOM</title>
+
+<style>
+#div1{
+	height:80px;
+	width:100%;
+	background-color:yellow;
+}
+
+#div2{
+	height:80px;
+	width:100%;
+	background-color:red;
+}
+
+#div3{
+	height:80px;
+	width:100%;
+	background-color:blue;
+}
+
+#div4{
+	height:80px;
+	width:100%;
+	background-color:green;
+}
+</style>
+
+
+</head>
+<body>
+
+<div id="div1" class="class1" name="name1"></div>
+<div id="div2" class="class1" name="name1"></div>
+<div id="div3" class="class1" name="name2"></div>
+<div id="div4" class="class1" name="name3"></div>
+
+<script>
+
+//How to access the document (DOM SELECTORS)
+
+////access by id
+document.getElementById("div1").innerHTML="javascript";
+
+
+////access by class name.Unable to access without entering index number.
+document.getElementsByClassName("class1")[0].innerHTML="javascript";  //Unable to access without entering index number.
+
+
+////access by tag name.Unable to access without entering index number.
+document.getElementsByTagName("div")[3].innerHTML="JAVASCRIPT"; 
+
+////access by name.Unable to access without entering index number.
+document.getElementsByName("name1")[1].innerHTML="JAVASCRIPT";
+
+
+////access by tag name.Unable to access without entering index number.
+document.querySelectorAll("div")[0].innerHTML="js"; //tagname
+
+////access by class name.Unable to access without entering index number.
+document.querySelectorAll(".class1")[1].innerHTML="js"; 
+
+
+////assigning a new id by accessing it with id
+document.getElementById("div1").id="div5";
+document.getElementById("div5").innerHTML="javascript";
+
+////assigning a new class name by accessing it with id
+document.getElementById("div5").className="class2";
+
+
+</script>
+
+
+
+
+</body>
+</html>
