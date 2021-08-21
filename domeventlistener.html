@@ -1,0 +1,61 @@
+<html>
+<head>
+<title>javascript dom event listener</title>
+
+<style>
+
+#div1{
+	width:100%;
+	height:100px;
+	background-color:yellow;
+}
+
+</style>
+
+</head>
+<body>
+
+<div id="div1"></div>
+<input id="Text1" type="text"/>
+<button id="btn">Click</button>
+
+
+<script>
+
+/*
+document.getElementById("btn").addEventListener("click",function(){
+
+document.getElementById("div1").innerHTML="JAVASCRIPT";
+document.getElementById("div1").style.backgroundColor="blue";
+document.getElementById("div1").style.fontSize="50px";
+
+} );
+
+*/
+
+var btn=document.getElementById("btn");
+var name=prompt("Hello, what is your name : ","null");
+btn.addEventListener("click",welcome);
+
+function welcome(){
+if(name=="null"){
+document.getElementById("div1").innerHTML="Please enter a name";
+}else{
+document.getElementById("div1").innerHTML="Welcome  "+name;
+}
+
+}
+
+btn.addEventListener("click",bgcolor);
+function bgcolor(){
+document.getElementById("div1").style.backgroundColor="blue";
+}
+
+btn.removeEventListener("click",bgcolor);
+
+</script>
+
+
+
+</body>
+</html>
