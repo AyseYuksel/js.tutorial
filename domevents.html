@@ -1,0 +1,110 @@
+<html>
+
+<head>
+<title>javascript-DOM EVENTS</title>
+
+
+<style>
+#div1{
+	width:100%;
+	height:100px;
+	background-color:yellow;
+}
+</style>
+
+</head>
+
+<body>
+
+<div id="div1"></div>
+
+<!-- When the button is pressed, the alert screen will appear and write 'button clicked' on the screen. -->
+<button onclick="alert('button clicked')" id="button1">CLICK</button>
+
+
+<!-- When the button is pressed, will write 'BUTTON CLICKED' in div with id div1 -->
+<button onclick="document.getElementById('div1').innerHTML='BUTTON CLICKED'" id="button1">CLICK</button>
+
+
+<!-- When the button is pressed, clickevent() function will work and write 'BUTTON CLICKED' in div with id div1 -->
+<button onclick="clickevent()" id="button1">CLICK</button>
+
+
+<!--ondblclick ->it will work when the button is pressed twice -->
+<button ondblclick="clickevent()" id="button1">CLICK</button>
+
+<!--onchange->When something is changed in the message box, the alert screen will open and 'text changed write on it -->
+<input onchange="alert('text changed')" id="Text1" type="text" value="Javascript"/>
+
+<!-- focus-> When you click on the message box, the ffocus() function will work and "text box clicked" will be written to the in div with id div1.-->
+<!-- blur-> when you click somewhere other than the message box,the fblur() function will work and "text box exited" will be written to the in div with id div1. -->
+<input onfocus="ffocus()" onblur="fblur()" id="Text1" type="text" value="Javascript"/>
+
+<!-- onkeypress-> when something is written in the message box,keypress() function will work and "something was written in the message box "  will be written to the in div with id div1. -->
+<input onkeypress="keypress()" id="Text1" type="text" />
+
+<!-- after pressing the button the onkeyup method works. -->
+<!-- when the button is pressed the onkeydown method works.-->
+<input onkeyup="alert('something was written in the message box')" id="Text1" type="text" />
+<input onkeydown="alert('something was written in the message box')" id="Text1" type="text" />
+
+<!--clickbutton() function works when you click the button. With this function the background of the div becomes blue -->
+<button onclick="clickbutton" id="button1">CLICK</button>
+
+
+<!--onmouseover===onmousemove-->
+<!--inputmouse() function will work when the mouse cursor is over the message box and some properties of the message box will be changed with the help of the function. -->
+<!--outmouse() function will work when the mouse cursor isnt over the message box and some properties of the message box will be changed with the help of the function.-->
+<input  onmousemove="inputmouse()" onmouseout="outmouse()" id="Text2" type="text" />
+
+<!--changecolor() function works when you click the button.it giving a different random color to the div each time the button is clicked -->
+<button onclick="changecolor()" id="button1">CLICK</button>
+
+<script>
+
+function clickevent(){
+//alert("button clicked");
+document.getElementById('div1').innerHTML="button clicked";
+}
+
+function ffocus(){
+document.getElementById('div1').innerHTML="text box clicked";
+}
+
+function fblur(){
+document.getElementById('div1').innerHTML="text box exited";
+}
+
+function keypress(){
+document.getElementById('div1').innerHTML="something was written in the message box ";
+}
+
+//mouse event 
+function inputmouse(){
+document.getElementById("Text2").style.width="150px";
+document.getElementById("Text2").style.height="150px";
+document.getElementById("Text2").style.backgroundColor="blue";
+}
+
+function outmouse(){
+document.getElementById("Text2").style.width="200px";
+document.getElementById("Text2").style.height="20px";
+document.getElementById("Text2").style.backgroundColor="green";
+}
+
+function clickbutton(){
+document.getElementById('div1').style.backgroundColor="blue";
+}
+
+//giving a different random color to the div each time the button is clicked
+function changecolor(){
+var colors=["blue","yellow","red","orange","black","purple","gray"];
+var randomcolor=colors[Math.round(Math.random()*colors.length)];
+document.getElementById('div1').style.backgroundColor=randomcolor;
+}
+
+
+</script>
+
+</body>
+</html>
