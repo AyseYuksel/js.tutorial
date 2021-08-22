@@ -1,0 +1,126 @@
+<html>
+<head>
+<title>BOM(browser object model)</title>
+<style>
+
+
+</style>
+</head>
+
+
+<body>
+
+<button id="btn" >OPEN</button>
+<button id="btn2" >CLOSE THE TAB</button>
+<button id="btn3">PRINT THE PAGE</button>
+<button id="btn4">MOVE</button> 
+<button id="btn5">RESIZE</button> 
+<button id="btn6">RESIZEBY</button>
+
+<div id="div1"></div>
+
+
+<script>
+
+////window objects : These features can be used thanks to the "bom" feature.
+//window.alert("Hello\nWorld");
+//var a=window.prompt("Enter your age : ",0);
+
+/*
+var x=window.confirm("Do you accept the cookies");
+if(x){
+document.write("you accept the cookies");
+}else{
+document.write("you denied the cookies");
+}
+*/
+
+
+var newtab1;
+
+function openwindow(){
+//_blank -> open the link on new tab
+//_self ->open the link on the same page
+newtab1=window.open("https://www.google.com.tr/","_blank","width=20","height=20");
+
+////This feature doesnt support url only. The desired pdf file and so on can also be opened. 
+//window.open("browserobjectmodel.html");
+}
+
+function closewindow(){
+//this function close the tab.
+window.close();
+}
+
+function printpage(){
+//This function redirects to the printout page for the printer.
+window.print();
+}
+
+function movewin(){
+//moves the frame at the values in the function
+newtab1.moveTo(10,10);
+newtab1.focus();
+}
+
+function windowresize(){
+//Converts the size of the window directly to the values in the function
+newtab1.resizeTo(500,500);
+newtab1.focus();
+}
+
+function resizeBY(){
+//Adds the value from the function to the existing value
+newtab1.resizeBy(100,100);
+newtab1.focus();
+}
+
+
+var btn=document.getElementById("btn");
+btn.addEventListener("click",openwindow);
+
+
+var btn2=document.getElementById("btn2");
+btn2.addEventListener("click",closewindow);
+
+var btn3=document.getElementById("btn3");
+btn3.addEventListener("click",printpage);
+
+var btn4=document.getElementById("btn4");
+btn4.addEventListener("click",movewin);
+
+var btn5=document.getElementById("btn5");
+btn5.addEventListener("click",windowresize);
+
+var btn6=document.getElementById("btn6");
+btn6.addEventListener("click",resizeBY);
+
+////////BOM SCREEN FEATURES CONFIGURATIONS//////
+//seeing the width of the screen we use 
+var x=window.screen.width; // this function also works as-> screen.width
+//var x=screen.width;
+document.getElementById("div1").innerHTML=x; //output = 1366
+
+//seeing the height of the screen we use 
+var y=window.screen.height;  // this function also works as-> screen.height
+//var y=screen.height;
+document.getElementById("div1").innerHTML=y; //output=768
+
+//available usable width
+var t=screen.availWidth;
+document.getElementById("div1").innerHTML=t; //output=1366
+
+//available usable height
+var z=screen.availHeight;
+document.getElementById("div1").innerHTML=z; //output=728
+
+//pixel depth
+var q=screen.pixelDepth;
+document.getElementById("div1").innerHTML=q; //output=24
+
+
+</script>
+
+
+</body>
+</html>
