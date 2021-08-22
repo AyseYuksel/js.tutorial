@@ -1,0 +1,75 @@
+<html>
+<head>
+<title>BOM timing </title>
+<style>
+
+#div1{
+background-color:yellow;
+width:200px;
+height:100px;
+}
+
+</style>
+
+</head>
+<body>
+
+<div id="div1"></div>
+
+
+<script>
+
+//setInterval->It allows the function written in it to repeat at certain times.
+//setInterval has 2 parameters. The first parameter is the function to run.
+//The second parameter is the iteration time of the function in milliseconds.
+//1000 ms = 1 second 
+
+
+/*
+setInterval(function(){
+document.write("ANY");
+},2000);
+*/
+
+document.getElementById("div1").innerHTML="ANY";
+//every seconds change div's background color
+var a=setInterval(function(){
+var colors=["red","blue","gray","yellow","orange","black","green","purple","pink"];
+var div1=document.getElementById("div1");
+var col=colors[Math.round(Math.random()*colors.length)];
+var col2=colors[Math.round(Math.random()*colors.length)];
+div1.style.backgroundColor=col;
+div1.style.color=col2;
+},1000);
+
+
+//Disables the interval method named a
+//clearInterval(a); // 
+
+
+//setTimeout ->The function waits for the time we give, then runs the function only once.
+/*
+var b=setTimeout(function(){
+document.write("Hello world");
+},2000);
+*/
+
+
+//In two methods, the function does not necessarily have to be written in the method.
+// The function can be written externally and called by its name.
+
+function helloworld(){
+document.write("Hello world");
+}
+
+var b=setTimeout(helloworld,2000);
+//Disables the timeout method named b
+clearTimeout(b);
+
+
+</script>
+
+
+
+</body>
+</html>
