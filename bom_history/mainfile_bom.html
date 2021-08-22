@@ -1,0 +1,28 @@
+<html>
+<head>
+<title>BOM HISTORY</title>
+</head>
+
+<body>
+<div id="div1"></div>
+<button id="btn1">Go</button>
+<button id="btn2">Forward</button>
+
+<script>
+document.getElementById("div1").innerHTML="MAIN PAGE"+'<br><br>';
+var btn1=document.getElementById("btn1");
+
+function go(){
+window.open("secondfile_bom.html","_self");
+}
+btn1.addEventListener("click",go);
+
+var btn2=document.getElementById("btn2");
+function forw(){
+window.history.forward();
+}
+btn2.addEventListener("click",forw);
+</script>
+
+</body>
+</html>

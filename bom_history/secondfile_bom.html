@@ -1,0 +1,23 @@
+<html>
+<head>
+<title>BOM HISTORY</title>
+</head>
+
+<body>
+<div id="div1"></div>
+<button id="back">Back</button>
+
+<script>
+document.getElementById("div1").innerHTML="SECOND PAGE"+'<br><br>';
+var backbutton=document.getElementById("back");
+function back(){
+window.history.back();
+
+}
+backbutton.addEventListener("click",back);
+
+
+</script>
+
+</body>
+</html>
