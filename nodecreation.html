@@ -1,0 +1,88 @@
+<html>
+<head>
+<title>javascript dom elemens-node creation</title>
+
+<style>
+#div1{
+	width:50%;
+	height:auto;
+	background-color:yellow;
+	padding:10px;
+}
+
+
+</style>
+
+</head>
+
+<body>
+
+<div id="div1">
+	<p id="p1">First Paragraph</p>
+	<p id="p2">Second Paragraph</p>
+	<p id="p3">Third Paragraph</p>
+	<p id="p4">Fourth Paragraph</p>
+</div>
+
+
+
+<script>
+
+var x=document.createElement("p"); //element creation. Instead of the p tag it could be div h and so on.
+var y=document.createTextNode("Fifth Paragraph"); //create tag(element) content
+x.appendChild(y); //adding text inside the element
+
+
+var a=document.getElementById("div1");
+a.appendChild(x); //Adding an element to the end of the div tag
+
+//a.insertBefore(x,document.getElementById("p3")); //Adding an element before a desired element in the div tag
+
+
+
+//a.removeChild(document.getElementById("p4")); //Deleting the element with the given id
+
+
+//Replacing the text in the element with id p2 and the text created later.
+//Now the text that the y variable holds is written in the p2 element.
+var p2=document.getElementById("p2");
+//a.replaceChild(y,p2);
+
+
+//a.setAttribute("id","div2"); //Assigning new id to tag with id div1. the new id of the tag is div2
+
+
+//The class attribute is created and added to the tag with the id div1.
+//Attribute has value named "classname"
+//Added to tag with setAttributeNode() function
+var z=document.createAttribute("class"); 
+z.value="classname";
+a.setAttributeNode(z);
+
+
+//DOM NAVIGATION -> displaying the codes in the desired tag
+//alert(document.body.innerHTML);
+//alert(document.head.innerHTML);
+
+
+//DOM COLLECTION
+
+//only one elements configuration for only one element
+/*
+document.getElementsByTagName("p")[0].innerHTML="updated paragraph";
+document.getElementsByTagName("p")[0].style.color="blue";
+*/
+
+
+//configuration for all elements with the same tag
+var all=document.getElementsByTagName("p");
+for(i=0;i<all.length;i++){
+all[i].style.color="blue";
+}
+
+
+</script>
+
+
+</body>
+</html>
