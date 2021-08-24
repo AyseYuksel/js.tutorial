@@ -1,0 +1,113 @@
+<html>
+<head>
+<title>javascript practice 6 (countdown2)</title>
+
+<style>
+#div1{
+width:40%;
+height:auto;
+position:relative;
+left:450px;
+top:150px;
+}
+
+#hour{
+width:150px;
+height:150px;
+background-color:white;
+float:left;
+margin-left:4px;
+font-size:128px;
+text-align:center;
+}
+
+#minute{
+width:150px;
+height:150px;
+background-color:white;
+float:left;
+margin-left:4px;
+font-size:128px;
+text-align:center;
+}
+
+#second{
+width:150px;
+height:150px;
+background-color:white;
+float:left;
+margin-left:4px;
+font-size:128px;
+text-align:center;
+}
+
+body{
+background-color:green;
+}
+
+#srtbtn{
+width:100px;
+height:100px;
+background-color:blue;
+left:10px;
+top:10px;
+position:relative;
+}
+
+
+</style>
+
+</head>
+
+<body>
+
+<div id="div" class="countdown">
+<div id="hour"></div>
+<div id="minute"></div>
+<div id="second"></div>
+</div>
+
+<button onclick="start()" id="srtbtn">Start Countdown</button>
+
+<script>
+
+function start(){
+
+        var hour = prompt("Hour",0);
+        var minute = prompt("Minute",0);
+        var second = prompt("Second",3);
+		
+		
+var a=setInterval(function(){
+
+document.getElementById("hour").innerHTML = hour;
+document.getElementById("minute").innerHTML = minute;
+document.getElementById("second").innerHTML = second--;
+
+if(Number(document.getElementById("second").innerHTML)==0){
+second=59;
+minute--;
+}
+if(Number(document.getElementById("second").innerHTML)==0 && Number(document.getElementById("minute").innerHTML)==0){
+hour--;
+minute=59;
+}
+
+if((Number(document.getElementById("second").innerHTML)==0 && Number(document.getElementById("minute").innerHTML)==0) && Number(document.getElementById("hour").innerHTML)==0){
+
+clearInterval(a);  
+
+}
+
+},1000);	
+}	
+
+
+
+
+
+</script>
+</body>
+
+
+</html>
