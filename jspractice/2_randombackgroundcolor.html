@@ -1,0 +1,44 @@
+<html>
+<head>
+<title>javascript practice 2 </title>
+
+<style>
+
+</style>
+</head>
+
+
+<body id="back">
+
+
+<script>
+
+var text;
+
+function createColor(){
+var a="ABCDEF0123456789"; //length=15
+text="#";
+
+for(i=0;i<6;i++){
+var randomcolor=Math.round(Math.random()*15);
+text+=a.charAt(randomcolor); //return char 
+}
+
+}
+
+var a=setInterval(function(){
+
+createColor();
+document.getElementById("back").style.backgroundColor=text;
+},1000);
+
+clearInterval(a);
+
+
+
+</script>
+
+
+</body>
+
+</html>

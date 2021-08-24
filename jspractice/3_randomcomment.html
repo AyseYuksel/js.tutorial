@@ -1,0 +1,86 @@
+<html>
+<head>
+<title>javascript practice 3</title>
+<style>
+
+#div1{
+width:10%;
+height:150px;
+position:relative;
+top:100px;
+left:25%;
+color:white;
+
+}
+
+#div2{
+width:100%;
+height:100px;
+background-color:blue;
+text-align:center;
+}
+
+#div3{
+width:100%;
+height:50px;
+background-color:red;
+opacity:0.7;
+text-align:center;
+}
+
+
+
+</style>
+</head>
+
+<body>
+
+<div id="div1">
+
+	<div id="div2"> <!--comment-->
+ 
+	</div>
+
+
+
+	<div id="div3"> <!--name-->
+
+	</div>
+
+</div>
+
+<script>
+
+var a=[{comment:"good",name:"mike"},
+{comment:"bad",name:"jack"},
+{comment:"nice",name:"harry"},
+{comment:"bad",name:"kate"}];
+
+var num;
+
+function createNumber(){
+num=Math.round(Math.random()*3);
+}
+
+setInterval(function(){
+
+//div2-->comment , div3-->name
+
+createNumber();
+var com=a[num].comment;
+var nam=a[num].name;
+
+document.getElementById("div2").innerHTML="Comment : "+com;
+document.getElementById("div3").innerHTML="Comment Owner : "+nam;
+
+},2000);
+
+
+</script>
+
+
+
+
+
+</body>
+</html>

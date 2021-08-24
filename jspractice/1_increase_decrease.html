@@ -1,0 +1,61 @@
+<html>
+<head>
+<title>javascript practice 1 </title>
+
+
+<style>
+
+#increase{
+background-color:green;
+color:white;
+width:35px;
+height:30px;
+font-size:25px;
+}
+#decrease{
+background-color:red;
+color:white;
+width:35px;
+height:30px;
+font-size:25px;
+}
+
+</style>
+
+
+</head>
+
+<body>
+<input id="text" type="text" value="0"/>
+<button id="increase">+</button>
+<button id="decrease">-</button>
+
+<script>
+
+var incbut=document.getElementById("increase");
+var decbut=document.getElementById("decrease");
+
+
+function increasef(){
+var inpval=document.getElementById("text").value;
+inpval=Number(inpval);
+inpval+=1;
+document.getElementById("text").value=inpval;
+}
+
+function decreasef(){
+var inpval=document.getElementById("text").value;
+inpval=Number(inpval);
+inpval-=1;
+document.getElementById("text").value=inpval;
+}
+
+incbut.addEventListener("click",increasef);
+decbut.addEventListener("click",decreasef);
+
+
+</script>
+
+
+</body>
+</html>
