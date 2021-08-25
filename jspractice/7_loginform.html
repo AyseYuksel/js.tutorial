@@ -1,0 +1,123 @@
+<html>
+<head>
+<title>javascript practice 7 loginform </title>
+
+<style>
+
+#div1{
+width:30%;
+height:200px;
+background-color:lightgray;
+position:absolute;
+border-radius:10px;
+left:35%;
+top:25%;
+}
+
+#username{
+width:150px;
+height:30px;
+margin-left:20px;
+margin-top:20px;
+}
+
+#password{
+width:150px;
+height:30px;
+margin-left:30px;
+margin-top:20px;
+}
+
+
+#btn{
+margin-left:50%;
+width:100px;
+height:20px;
+margin-top:10px;
+}
+
+</style>
+</head>
+
+
+<body id="back">
+
+<div id="div1">
+
+<label style="margin-left:60px;color:black" for="username">User Name : </label>
+<input id="username" type="text"/>
+
+<label style="margin-left:60px;color:black" for="password">Password : </label>
+<input id="password" type="password"/>
+
+<br><br>
+<button id="btn">Log in</button>
+
+</div>
+
+
+<script>
+
+var text;
+
+function createColor(){
+var a="ABCDEF0123456789"; //length=15
+text="#";
+
+for(i=0;i<6;i++){
+var randomcolor=Math.round(Math.random()*15);
+text+=a.charAt(randomcolor); //return char 
+}
+
+}
+
+var a=setInterval(function(){
+
+createColor();
+document.getElementById("back").style.backgroundColor=text;
+},1000);
+
+
+
+var users=[{username:"ayse",password:"ayse"},
+{username:"admin",password:"admin"},
+{username:"ayseyuksel",password:"any"}];
+
+var inpusername;
+var inppass;
+var x;
+
+function check(){
+inpusername=document.getElementById("username").value;
+inppass=document.getElementById("password").value;
+
+for(x of users){
+
+if((x.username == inpusername)&&(x.password == inppass)){
+return true;
+}
+
+}
+
+}
+
+
+function confirmation(){
+check();
+if(check()){
+window.open("https://www.google.com.tr/","_self");
+}else{
+alert("Wrong username or password entered,please try again");
+}
+}
+
+var btn=document.getElementById("btn");
+btn.addEventListener("click",confirmation);
+
+
+</script>
+
+
+</body>
+
+</html>
