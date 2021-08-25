@@ -1,0 +1,132 @@
+<html>
+<head>
+
+<title>javascript 8 grade average</title>
+
+<style>
+
+body{
+background-color:lightblue;
+}
+
+#div1{
+width:30%;
+height:50%;
+margin-left:430px;
+margin-top:50px;
+background-color:gray;
+border-radius:10px;
+}
+
+#midterm{
+margin-left:20px;
+margin-top:20px;
+}
+
+#labelmid{
+margin-left:20px;
+}
+
+#labelfin{
+margin-left:20px;
+}
+
+#finalexam{
+margin-left:45px;
+margin-top:20px;
+}
+
+#average{
+width:70%;
+height:30px;
+margin-top:40px;
+margin-left:60px;
+border:none;
+border-radius:5px;
+}
+
+#result{
+margin-top:40px;
+margin-left:75px;
+}
+
+#labelresult{
+margin-left:20px;
+}
+
+#labelrating{
+margin-left:20px;
+}
+
+#rating{
+margin-top:20px;
+margin-left:72px;
+
+}
+
+
+</style>
+</head>
+
+<body>
+
+<div id="div1">
+
+<label id="labelmid" for="midterm">Midterm Exam :</label>
+<input id="midterm" type="text/">
+<br>
+<label id="labelfin" for="finalexam">Final exam :</label>
+<input id="finalexam" type="text/">
+<br>
+<button id="average">calculate average</button>
+<br>
+<label id="labelresult" for="result">Result: </label>
+<input id="result" type="text" value=""/>
+<br>
+<label id="labelrating" for="rating">Rating: </label>
+<input id="rating" type="text" value=""/>
+
+</div>
+
+
+<script>
+
+
+var x;
+
+function fresult(){
+
+var inpmidterm=document.getElementById("midterm").value;
+var inpfinal=document.getElementById("finalexam").value;
+x=(Number(inpmidterm)*0.4)+(Number(inpfinal)*0.6);
+document.getElementById("result").value=x;
+
+if(x<30){
+document.getElementById("rating").value="FF";
+}else if(x>=30 && x<40){
+document.getElementById("rating").value="FD";
+}else if(x>=40 && x<50){
+document.getElementById("rating").value="DD";
+}else if(x>=50 && x<60){
+document.getElementById("rating").value="DC";
+}else if(x>=60 && x<65){
+document.getElementById("rating").value="CC";
+}else if(x>=65 && x<70){
+document.getElementById("rating").value="CB";
+}else if(x>=70 && x<85){
+document.getElementById("rating").value="BB";
+}else if(x>=85 && x<90){
+document.getElementById("rating").value="BA";
+}else if(x>=90 && x<100){
+document.getElementById("rating").value="AA";
+}
+
+}
+
+var btn=document.getElementById("average");
+btn.addEventListener("click",fresult);
+
+</script>
+
+</body>
+</html>
