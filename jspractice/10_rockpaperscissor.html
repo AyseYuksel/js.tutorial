@@ -1,0 +1,240 @@
+<html>
+<head>
+<title>javascript practice 10 - rock paper scissors </title>
+
+<style>
+
+#div1{
+width:50%;
+height:300px;
+position:relative;
+top:100px;
+left:25%;
+border:2px solid green;
+box-shadow:green 0px 5px 3px;
+}
+
+#result{
+width:50%;
+height:100px;
+position:relative;
+top:130px;
+left:25%;
+color:forestgreen;
+font-size:64px;
+text-align:center;
+font-weight:bold;
+border:2px solid red;
+}
+
+#player1{
+width:200px;
+height:200px;
+float:left;
+border-bottom:2px solid black;
+background-repeat:no-repeat;
+background-position-x:center;
+background-image:url(paper.png);
+}
+
+#player2{
+width:200px;
+height:200px;
+float:right;
+border-bottom:2px solid black;
+background-repeat:no-repeat;
+background-position-x:center;
+background-image:url(scissors.png);
+}
+
+#skor{
+width:275px;
+height:200px;
+float:left;
+text-align:center;
+font-size:32px;
+color:black;
+}
+
+#score1{
+width:75px;
+height:75px;
+background-color:white;
+margin-top:80px;
+margin-left:25px;
+float:left;
+box-shadow:gray 0px 5px 3px;
+text-align:center;
+font-size:64px;
+}
+
+#score2{
+width:75px;
+height:75px;
+background-color:white;
+margin-top:80px;
+margin-left:25px;
+float:right;
+box-shadow:gray 0px 5px 3px;
+text-align:center;
+font-size:64px;
+}
+
+.play{
+color:black;
+font-size:28px;
+font-weight:bold;
+text-align:center;
+margin-top:200px;
+text-shadow:2px 2px 1px gray;
+}
+
+#btn{
+position:relative;
+width:200px;
+height:40px;
+margin-top:30px;
+margin-left:240px;
+font-size:20px;
+}
+
+
+</style>
+</head>
+
+
+
+<body>
+
+
+
+<div id="div1">
+
+
+
+	<div id="player1">
+		<p id="p1" class="play">PLAYER 1</p>
+	</div>
+	
+	<div id="skor">
+		Score
+		<div id="score1">
+		0
+		</div>
+		<div id="score2">
+		0
+		</div>
+	</div>		
+	
+	<div id="player2">
+		<p id="p2" class="play">PLAYER 2</p>
+	</div>
+
+	<button id="btn">Play</button>
+
+</div>
+
+<div id="result"></div>
+
+
+
+<script>
+
+var choice=["url(paper.png)","url(rock.png)","url(scissors.png)"];
+
+function rand(){
+var random=Math.round(Math.random()*2);
+return random;
+}
+
+var a,b;
+
+function create(){
+a=choice[rand()]; //player1 picture
+b=choice[rand()]; //player2 picture
+
+document.getElementById("player1").style.backgroundImage=a;
+document.getElementById("player2").style.backgroundImage=b;
+
+}
+
+function writeresult(){
+
+var x=Number(document.getElementById("score1").innerHTML);
+var y=Number(document.getElementById("score2").innerHTML);
+
+if(a=="url(rock.png)" && b=="url(scissors.png)"){
+document.getElementById("score1").innerHTML=x+1;
+}else if(a=="url(rock.png)" && b=="url(paper.png)"){
+document.getElementById("score2").innerHTML=y+1;
+}else if(a=="url(paper.png)" && b=="url(rock.png)"){
+document.getElementById("score1").innerHTML=x+1;
+}else if(a=="url(paper.png)" && b=="url(scissors.png)"){
+document.getElementById("score2").innerHTML=y+1;
+}else if(a=="url(scissors.png)" && b=="url(rock.png)"){
+document.getElementById("score2").innerHTML=y+1;
+}else if(a=="url(scissors.png)" && b=="url(paper.png)"){
+document.getElementById("score1").innerHTML=x+1;
+}
+}
+
+
+function check(){
+var x=Number(document.getElementById("score1").innerHTML);
+var y=Number(document.getElementById("score2").innerHTML);
+
+if(x==3){
+setInterval(function(){
+document.getElementById("result").innerHTML="PLAYER 1 WIN";
+
+setTimeout(function(){
+document.getElementById("result").innerHTML="";
+
+},1000);
+
+},2000);
+}else if(y==3){
+setInterval(function(){
+document.getElementById("result").innerHTML="PLAYER 2 WIN";
+
+setTimeout(function(){
+document.getElementById("result").innerHTML="";
+
+},1000);
+
+},2000);
+}
+
+}
+
+function color(){
+var x=Number(document.getElementById("score1").innerHTML);
+var y=Number(document.getElementById("score2").innerHTML);
+
+
+if(x==y){
+document.getElementById("score1").style.backgroundColor="yellow";
+document.getElementById("score2").style.backgroundColor="yellow";
+}else if(x>y){
+document.getElementById("score1").style.backgroundColor="green";
+document.getElementById("score2").style.backgroundColor="red";
+}else if(y>x){
+document.getElementById("score1").style.backgroundColor="red";
+document.getElementById("score2").style.backgroundColor="green";
+}
+
+}
+
+document.getElementById("btn").addEventListener("click",function(){
+rand();
+create();
+writeresult();
+color();
+check();
+});
+
+</script>
+
+
+</body>
+</html>
