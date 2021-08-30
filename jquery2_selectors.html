@@ -1,0 +1,190 @@
+<html>
+<head>
+<title>jquery selectors</title>
+<script src="jquery-3.6.0.min.js"></script>
+<style>
+table{
+border:1px solid black;
+}
+tr{
+text-align:center;
+}
+td,th{
+border:1px solid black;
+padding:3px;
+}
+</style>
+
+</head>
+
+<body>
+
+<div>
+	<p id="p1" class="c1">Paragraph 1 ID : p1 Class:c1 HELLO </p>
+	<p id="p2" class="c1">Paragraph 2 ID : p2 Class:c1 </p>
+    <p id="p3" class="c3">Paragraph 3 ID : p3 Class:c3 </p>
+	<p id="p4" class="c4">Paragraph 4 ID : p4 Class:c4 </p>
+</div>
+
+<table cellspacing="0">
+	<thead>
+	<tr>
+		<th>Name/Surname</th>
+		<th>Age</th>
+		<th>Job</th>
+	</tr>		
+	
+	<tr>
+		<td>Will Smith</td>
+		<td>24</td>
+		<td>Artist</td>
+	</tr>
+	<tr>
+		<td>Luis Nani</td>
+		<td>35</td>
+		<td>Footballer</td>
+	</tr>
+	<tr>
+		<td>Mehmet Oz</td>
+		<td>58</td>
+		<td>Doctor</td>
+	</tr>
+	</thead>
+</table>
+
+<ul>
+	<li>HTML</li>
+	<li>CSS</li>
+	<li>Javascript</li>
+	<li>JQuery</li>
+</ul>
+<ul>
+	<li>HTML</li>
+	<li>CSS</li>
+	<li>Javascript</li>
+	<li>JQuery</li>
+</ul>
+
+<a href="https://www.google.com.tr/" target="_self">click for google</a>
+<br><br>	
+
+<input id="cb1" type="checkbox" checked>CB1</checkbox>
+<input id="cb2" type="checkbox" checked>CB2</checkbox>
+<br><br>
+
+<button id="btn">CLICK</button>
+<button id="btn2">CLICK2</button>
+
+
+<script>
+
+//SELECTORS
+
+//select using id in javascript : 
+//document.getElementById("btn");
+
+//select using id in JQuery:
+//$("#btn")...
+
+$(function(){
+$("#btn").click(function(){
+
+////select element name : $("p") , $("div") , $("body")
+//$("p").css("color","red"); 
+
+////select using id 
+//$("#p1").css("color","red");
+
+////select using class:
+//$(".c1").css("color","red");
+
+////this-> the function affects whoever it works for
+//$(this).css("color","red"); //button
+
+//// * ->Selects all elements in the html document
+//$("*").css("color","red");
+
+////Affects all p elements with class c1
+//$("p.c1").css("color","red");
+
+////Affects element with id p1 with class c1
+//$("#p1.c1").css("color","red");
+
+
+////affects first p element
+//$("p:first").css("color","red");
+
+
+////affects last p element
+//$("p:last").css("color","red");
+
+////affects all ul elements 
+//$("ul").css("color","red");
+
+////affect first element of firts ul
+//$("ul li:first").css("color","red");
+
+////affect first element of all ul
+//$("ul li:first-child").css("color","red");
+
+////affect last element of last ul
+//$("ul li:last").css("color","red");
+
+////affect last element of all ul
+//$("ul li:last-child").css("color","red");
+
+////selection by attribute ->  [ ... ]
+//$("[href]").css("color","red");
+
+////apply css property for all elements that have id
+//$("[id]").css("color","red");
+
+////
+//$("a[target='_self']").css("color","red"); 
+//$("a[target!='_blank']").css("color","red"); 
+
+////to affect all existing buttons.
+//$(":button").css("color","red");
+
+////to affect all existing checkbox.
+//$(":checked").css("width","100px");
+
+
+////affect on elements that contain the keyword inside the contains function
+//$("p:contains(HELLO)").css("color","red");
+
+
+////Affects elements whose id is not p1
+//$("p:not(#p1)").css("color","red");
+
+////affect on elements that not contain the keyword inside the contains function
+//$("p:not(':contains(HELLO)')").css("color","red");
+
+////Affects divs that contain a p element
+//$("div:has(p)").css("color","red");
+
+////make multiple choices
+//$(".c1,#p4,ul").css("color","red");
+
+
+////table
+//$("tr").css("color","red");
+//$("th").css("color","red");
+//$("td").css("color","red");
+
+////access to even-numbered indexes
+//$("tr:even").css("color","red");
+
+////access to odd-numbered indexes
+//$("tr:odd").css("color","red");
+
+});
+
+});
+
+
+
+</script>
+
+</body>
+</html>
