@@ -1,0 +1,82 @@
+<html>
+<head>
+<title>jquery</title>
+
+<script src="jquery-3.6.0.min.js"></script>
+
+</head>
+<body>
+
+<p>jquery</p>
+<p>jquery</p>
+<p>jquery</p>
+
+
+<script>
+
+//jquery syntax
+
+//creat function
+/*
+$(document).ready(function(){
+.
+.
+.
+
+});
+
+$(function(){});
+*/
+
+
+
+//For example in javascript:
+//document.getElementById("p")[0].innerHTML="helloworld";
+
+//this expression is expressed in jquery as for example:
+//$("p")......;
+
+$(function(){
+
+$("p").click(function(){
+
+$(this).hide();
+//where the keyword "this" references the element it is in
+//this=p in here
+
+});
+
+});
+
+
+
+//if we wanted to write this process with javascript
+/*
+var a=document.querySelectorAll("p");
+a[0].onclick=function(){
+a[0].style.display="none";
+}
+a[1].onclick=function(){
+a[1].style.display="none";
+}
+a[2].onclick=function(){
+a[2].style.display="none";
+}
+*/
+
+
+//NoConflict ->With this feature, the given alias is used instead of the $ sign.
+/*
+var jq=$.noConflict();
+jq(function(){
+jq("p").click(function(){
+jq(this).hide();
+});
+});
+*/
+
+
+</script>
+
+</body>
+</html>
