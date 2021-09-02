@@ -1,0 +1,139 @@
+<html>
+<head>
+<title>jquery form-window event</title>
+<style>
+#div1{
+width:100%;
+height:200px;
+background-color:yellow;
+overflow:scroll;
+}
+</style>
+
+
+</head>
+<body>
+
+<div id="div1">
+<p>Javascript</p>
+<p>Javascript</p>
+<p>Javascript</p>
+<p>Javascript</p>
+<p>Javascript</p>
+<p>Javascript</p>
+</div>
+
+<p id="p1"></p>
+
+<br>
+
+<form action="" id="frm" style="margin-left:50px">
+
+<input id="Text1" type="text" placeholder="UserName" value="Javascript" /><br><br>
+<input id="Password1" type="password" placeholder="Password"/><br><br>
+Male<input id="radio1" type="radio" name="gender"/><br>
+Female<input id="radio1" type="radio" name="gender"/><br><br>
+<input id="btn" type="submit" value="Submit"/>
+</form>
+
+<button id="btn2">CLICK</button>
+<script src="jquery-3.6.0.min.js"></script>
+
+<script>
+
+$(function(){
+/*
+$("#frm").submit(function(){
+//$("#div1").css("background-color","blue");
+//alert("form saved");
+});
+*/
+
+/*
+//The effect is when pressed somewhere else after a change in the input field.
+$("#Text1").change(function(){
+$("#div1").css("background-color","blue");
+});
+*/
+
+/*
+$("#Text1").focus(function(){
+//effect when clicking the input field
+$("#div1").css("background-color","green");
+});
+
+
+$("#Text1").blur(function(){
+//The effect when clicking on the input field and clicking somewhere else
+$("#div1").css("background-color","red");
+});
+*/
+
+
+//focusin==focus & blur==focusout
+/*
+$("#Text1").focusin(function(){
+//effect when clicking the input field
+$("#div1").css("background-color","green");
+});
+
+
+$("#Text1").focusout(function(){
+//The effect when clicking on the input field and clicking somewhere else
+$("#div1").css("background-color","red");
+});
+*/
+
+/*
+$("#Text1").select(function(){
+//effect when text is selected in the input field
+$("#div1").css("background-color","green");
+});
+
+$("#btn2").click(function(){
+//When the button is pressed, performs defined feature
+//in here when the button is pressed it select the text in the input field and make the background green
+$("#Text1").trigger("select");
+//Here, instead of select, features such as focus blur click could also be used.
+});
+*/
+
+
+//WINDOW EVENTS
+
+/*
+var x=0;
+$("#div1").scroll(function(){
+//The value increases as the scrollbar moves.
+$("#p1").text(x+=1);
+});
+*/
+
+
+/*
+//write window dimensions
+var wid=$(window).width();
+var heig=$(window).height();
+
+$("#p1").text("width:" +wid+"\n height : "+heig);
+*/
+
+
+$(window).resize(function(){
+//dynamically write window size change
+var wid=$(window).width();
+var heig=$(window).height();
+
+$("#p1").text("width:" +wid+"\n height : "+heig);
+
+});
+
+
+});
+
+
+</script>
+
+
+</body>
+</html>
