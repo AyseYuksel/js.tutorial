@@ -1,0 +1,152 @@
+<html>
+<head>
+<title>JQuery EventListener </title>
+
+<style>
+
+#div1{
+width:100%;
+height:400px;
+background-color:yellow;
+}
+
+#div2{
+width:30%;
+height:200px;
+background-color:green;
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+<div id="div1">
+		<div id="div2"></div>
+
+</div>
+
+<br>
+<input id="txt" type="text">
+<br>
+<button id="btn">Click</button>
+
+
+
+
+<script src="jquery-3.6.0.min.js"></script>
+
+<script>
+
+$(function(){
+
+/*
+	$("#btn").click(function(){
+		
+		$("#div1").css("background-color","red");
+
+
+
+	});
+*/
+
+/*
+$("#btn").dblclick(function(){
+		
+		$("#div1").css("background-color","red");
+
+
+
+	});
+*/
+
+
+/*
+$("#div1").mouseenter(function(){
+//it takes effect when mouse moves cursor over id div1		
+		$("#div1").css("background-color","red");
+
+
+
+	});
+$("#div1").mouseleave(function(){
+//It takes effect when the mouse cursor leaves the place with id div1		
+		$("#div1").css("background-color","blue");
+
+
+
+	});
+*/
+
+/*
+//mouseover==mouseenter & mouseleave==mouseout
+$("#div1").mouseover(function(){	
+		$("#div1").css("background-color","red");
+
+	});
+$("#div1").mouseout(function(){	
+		$("#div1").css("background-color","blue");
+
+
+
+	});
+*/
+
+/*
+$("#div1").hover(function(){	
+		$("#div1").css("background-color","blue");
+
+	});
+$("#div1").mouseout(function(){	
+		$("#div1").css("background-color","yellow");
+});
+*/
+
+
+/*
+$("#div1").mouseup(function(){	
+		$("#div1").css("background-color","blue");
+	});
+$("#div1").mousedown(function(){	
+//mousedown=takes effect when left click of the mouse is pressed
+		$("#div1").css("background-color","yellow");
+	});
+*/
+
+/*
+$("#txt").keypress(function(){
+//When you type text in the message box, the background of the place with the id div1 will change color.	
+		$("#div1").css("background-color","blue");
+	});
+*/
+
+/*
+$("#txt").keyup(function(){
+//the color doesnt change until the keyboard contact is finished to type in the message box.
+		$("#div1").css("background-color","red");
+	});
+*/
+
+
+$("#txt").keydown(function(){
+//The color changes the moment the keyboard is touched to type in the message box.
+		$("#div1").css("background-color","black");
+	});
+
+
+});
+
+
+
+
+
+</script>
+
+
+
+
+</body>
+</html>
