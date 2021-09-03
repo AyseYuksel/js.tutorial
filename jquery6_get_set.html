@@ -1,0 +1,89 @@
+<html>
+<head>
+<title>jquery get-set</title>
+
+<style>
+
+
+
+</style>
+
+</head>
+<body>
+
+<p id="p1">HTML</p>
+<p id="p2"><b>CSS</b></p>
+<p id="p3">JAVASCRIPT</p>
+
+<input id="t1" type="text" value="jquery"/>
+<br><br>
+
+
+<a id="a1" class="class_name_a" href="https://www.google.com.tr/" target="_self" >  GOOGLE.COM</a>
+<br>
+<br>
+<button id="btn">CLICK</button>
+
+<script src="jquery-3.6.0.min.js"></script>
+
+
+<script>
+
+$(function(){
+
+$("#btn").click(function(){
+
+//assigning the contents of the variable p1 to a variable
+//var insideP1=$("#p1").text();
+//alert(insideP1);
+
+
+/*
+var insideP2=$("#p2").text();
+alert(insideP2); //output-> CSS 
+
+var insideP2=$("#p2").html();
+alert(insideP2); //output-> <b>CSS</b> 
+*/
+
+////Values in input entries are retrieved with val() .
+//var insidet1=$("#t1").val();
+//alert(insidet1); //output=jquery
+
+////access to attributes
+//var attr_t1=$("#a1").attr("href");
+//alert(attr_t1); 
+//////output= https://www.google.com.tr/
+
+//var attr2_t1=$("#a1").attr("target");
+//alert(attr2_t1); 
+/////output=_self
+
+
+//var attr3_t1=$("#a1").attr("class");
+//alert(attr3_t1); 
+//output=class_name_a
+
+////make changes to the content of elements
+//$("#p1").text("<b>HELLO WORLD</b>"); //output = > <b>HELLO WORLD</b>
+//$("#p3").html("<b>HELLO WORLD</b>"); // output=> HELLO WORLD //output is bold
+
+//input element
+$("#t1").val("TEXT IS CHANGE");
+
+//CHANGE ATTRIBUTES
+$("#a1").attr({"href":"https://translate.google.com/",
+"target":"_blank"});
+
+
+});
+
+
+});
+
+
+</script>
+
+
+</body>
+</html>
