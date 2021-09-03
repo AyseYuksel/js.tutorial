@@ -1,0 +1,92 @@
+<html>
+<head>
+<title>jquery event->On-Off-One-proxy</title>
+
+<style>
+
+#div1{
+width:100%;
+height:200px;
+background-color:yellow;
+}
+
+
+</style>
+
+</head>
+<body>
+
+<div id="div1"></div>
+<br>
+<button id="btn">CLICK</button>
+
+<script src="jquery-3.6.0.min.js"></script>
+
+<script>
+
+$(function(){
+
+//on -> With the "on" feature,
+// desired features can be created in response to the operation performed within the function.
+
+$("#div1").on({
+
+click:function(){
+$("#div1").css("background-color","blue")},
+
+
+mouseenter:function(){
+$("#div1").css("background-color","red")},
+
+
+mouseleave:function(){
+$("#div1").css("background-color","gray")}
+
+});
+
+
+//With the "off" feature, 
+//a previously acquired feature can be removed.
+/*
+$("#btn").click(function(){
+$("#div1").off("click");
+//After clicking the button, the color change feature when clicking div1 will no longer work
+//so here click feature is turned off
+});
+*/
+
+
+//with the "one" feature,
+//runs the functions written in it only once
+/*
+$("#div1").on({
+
+click:function(){
+$("#div1").css("background-color","black")},
+
+mouseleave:function(){
+$("#div1").css("background-color","gray")}
+
+});
+*/
+
+
+//Proxy Feature
+//You can access and use functions inside an object with the proxy feature.
+var obje={
+name:"jack",surname:"smith",
+change:function(){
+$("#div1").css("background-color","gray");
+$("#div1").text("HELLO WORLD");
+}
+};
+
+$("#btn").click($.proxy(obje,"change"));
+
+});
+
+</script>
+
+
+</body>
+</html>
