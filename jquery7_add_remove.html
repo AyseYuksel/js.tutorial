@@ -1,0 +1,87 @@
+<html>
+<head>
+<title>jquery add-remove</title>
+
+<style>
+
+#div1{
+border:2px solid black;
+padding:10px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div id="div1" class="div1class">
+
+<p id="p1">Paragraph 1</p>
+<p id="p2">Paragraph 2</p>
+<p id="p3">Paragraph 3</p>
+<p id="p4">Paragraph 4</p>
+</div>
+<br>
+
+<button id="btn" onclick="write1()">Click</button>
+
+<div></div>
+<script src="jquery-3.6.0.min.js"></script>
+
+
+<script>
+
+$(function(){
+
+	$("#btn").click(function(){
+
+//ADD
+	////Appends to the end of the id field div1
+//	$("#div1").append("JQUERY");	
+	
+	////Appends to the beginning of the id field div1
+//	$("#div1").prepend("JQUERY");	
+
+	////Appends outside of div1 element
+//	$("#div1").after("JQUERY");		
+
+	////Appends before div1 element
+//	$("#div1").before("JQUERY");	
+
+
+//SUBSTRACTION
+	////deletes the selected element
+	//$("#div1").remove(); //delete div1
+	//$("#p1").remove(); //delete p1
+	
+	////Removes the elements contained in the div1 element
+	//$("#div1").empty();
+	
+	////removes all fields with div tag
+	//$("div").remove();
+	
+	////Deletes the div tag with the entered class name
+	//$("div").remove(".div1class");
+	
+	});
+
+
+});
+
+//Adding after defining a variable
+function write1(){
+	var t1="<p>Paragraph is written</p>";
+	var t2=$("<p></p>").text("P2");	
+	var t3=document.createElement("p").innerHTML="p3";
+	
+//	$("#div1").append(t1,t2,t3);
+//	$("#div1").prepend(t1,t2,t3);
+}
+
+
+</script>
+
+
+</body>
+</html>
