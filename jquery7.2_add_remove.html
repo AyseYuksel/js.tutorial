@@ -1,0 +1,80 @@
+<html>
+<head>
+<title>jquery add-remove</title>
+
+<style>
+
+#div1{
+border:2px solid black;
+padding:10px;
+}
+
+#p5{color:red;}
+</style>
+
+</head>
+
+<body>
+
+<div id="div1" class="div1class">
+
+<p id="p1">Paragraph 1</p>
+<p id="p2">Paragraph 2</p>
+<p id="p3">Paragraph 3</p>
+<p id="p4">Paragraph 4</p>
+</div>
+<br>
+
+<button id="btn" onclick="write1()">Click</button>
+
+<div></div>
+<script src="jquery-3.6.0.min.js"></script>
+
+
+<script>
+
+$(function(){
+
+	$("#btn").click(function(){
+//appendTo->first the text to be added is determined, then the place to be added is written
+	//$("<p> New Paragraph</p>").appendTo("#div1");
+
+//append->first the place to be added is written, then the text to be added is determined
+	//$("#div1").append("New Paragraph 2");
+	
+	//$("<p> New Paragraph</p>").prependTo("#div1");
+	
+	//Adding attributes can also be done
+	//then css property can be given to the element by using these attributes
+//	$("<p id='p5' class='c5'> New Paragraph</p>").insertAfter("#div1");
+	
+//	$("<p> New Paragraph</p>").insertBefore("#div1");
+	
+////Assigns the specified properties to all elements with the p tag.	
+	//$("<p id='p5' class='c5'> New Paragraph</p>").replaceAll("p");
+
+
+////replaceAll and replaceWith are used for the same property.	
+	//$("p").replaceWith("<p id='p5' class='c5'> New Paragraph</p>");
+	
+////replaceAll -> first the feature is defined then the place it will affect
+////replaceWith -> first the place it will affect, then the feature is defined
+
+	
+	
+	////first copy the contents of the place with the specified id 
+	////then write this copy to the specified location
+	$("#p1").clone().appendTo("#div1");
+
+	});
+
+
+});
+
+
+
+</script>
+
+
+</body>
+</html>
