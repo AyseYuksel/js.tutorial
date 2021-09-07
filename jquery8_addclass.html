@@ -1,0 +1,99 @@
+<html>
+<head>
+
+<title>jquery8 addClass-css</title>
+
+<style>
+
+#div1{
+border:2px solid black;
+padding:10px;
+}
+
+.red{
+background-color:red;
+}
+
+.blue{
+background-color:blue;
+}
+
+.greentext{
+color:green;
+
+}
+
+</style>
+
+
+</head>
+<body>
+
+<div id="div1" class="divclass">
+	<p id="p1" class="blue">Paragraph 1</p>
+	<p id="p2">Paragraph 2</p>
+	<p id="p3">Paragraph 3</p>
+	<p id="p4">Paragraph 4</p>
+</div>
+<br><br>
+
+<button id="btn">Click</button>
+
+
+<script src="jquery-3.6.0.min.js"></script>
+
+<script>
+
+$(function(){
+
+	$("#btn").click(function(){
+	
+	////adding a class to an element
+	//$("#p1").addClass("red");
+	$("#p2").addClass("blue");
+	$("#p3").addClass("greentext");
+	
+	
+	//adding multiple classes to an element
+	$("#p4").addClass("red greentext");
+	//The p4 element now has the properties of both the red class and the greentext class
+
+	//remove class
+	//$("#p1").removeClass("blue");
+	
+	
+	//toggleClass->
+	//If the element doesn't have the specified property, it gains that property. 
+	//If the element has the specified property, it loses that property.
+	//property ownership changes on every click
+	//$("#p1").toggleClass("blue");
+	
+	
+	////remove attribute
+	//$("#p1").removeAttr("class");
+	//$("#p1").removeAttr("id");
+	
+	////add css properties
+	//var a=$("#p1").css("color");
+	//alert(a); //output=>rgb(0, 0, 0) //black
+	
+	$("#p1").css("color","yellow");
+	$("#p1").css("font-size","20px");
+	
+	//or
+	
+	$("#p4").css({
+	"color":"gray",
+	"font-size":"30px",
+	"background-color":"purple"
+	});
+	
+
+	});
+
+});
+
+</script>
+
+</body>
+</html>
