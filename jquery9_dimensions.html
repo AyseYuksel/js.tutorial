@@ -1,0 +1,106 @@
+<html>
+<head>
+<title>jquery9 dimensions</title>
+
+<style>
+
+#div1{
+width:400px;
+height:400px;
+border:5px solid black;
+padding:10px;
+margin:20px;
+}
+
+
+</style>
+
+</head>
+
+
+<body>
+
+<div id="div1">
+
+</div>
+
+<div id="div2"></div>
+<br><br>
+<button id="btn">click</button>
+
+<script src="jquery-3.6.0.min.js"></script>
+
+<script>
+
+
+$(function(){
+
+$("#btn").click(function(){
+
+//var a=$("#div1").width();
+//var b=$("#div1").height();
+
+//$("#div2").html("width : "+a+"<br>height : "+b);
+
+/*output
+width : 400
+height : 400
+*/
+
+
+
+//var c=$("#div1").innerWidth();
+//var d=$("#div1").innerHeight();
+
+//$("#div2").html("width : "+c+"<br>height : "+d);
+
+/*output
+width : 420
+height : 420
+*/
+///////With the innerWidth and innerHeight property, 
+////padding values are added to the width and height properties.
+
+////////////
+
+//var e=$("#div1").outerWidth();
+//var f=$("#div1").outerHeight();
+
+//$("#div2").html("width : "+e+"<br>height : "+f);
+
+/*output
+width : 430
+height : 430
+*/
+
+//////With the outher property,
+///// padding values and border are also added to the width and height properties.
+
+////////////////////////////
+
+
+var g=$("#div1").outerWidth(true);
+var h=$("#div1").outerHeight(true);
+
+$("#div2").html("width : "+g+"<br>height : "+h);
+
+/*output
+width : 470
+height : 470
+*/
+
+////now all values including margin are added.(padding,margin,border,width,height)
+
+/////////////////////////////
+//manually set width and height values
+$("#div1").width(500);
+$("#div1").height(500);
+
+});
+
+});
+
+</script>
+
+</body>
+</html>
