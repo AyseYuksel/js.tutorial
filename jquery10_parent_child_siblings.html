@@ -1,0 +1,276 @@
+<html>
+<head>
+<title>jquery10 parent-child</title>
+
+<style>
+
+.c1{
+display:block;
+border:2px solid lightgrey;
+color:gray;
+padding:5px;
+margin:15px;
+font-weight:bold;
+}
+
+
+</style>
+
+</head>
+
+
+<body>
+
+<div id="div1" class="c1">
+
+	div (5th parent) ID:#div1
+	<div id="div2" class="c1">
+	div (4th parent) ID:#div2
+	<ul class="c1">
+	ul (3th parent)
+	<li class="c1">
+		li (2nd parent)
+		<p class="c1">
+		p (1st parent)
+		<span class="c1">span</span>
+		</p>
+	</li>
+	</ul>	
+	</div>
+
+	<div id="div3" class="c1">
+	div ID:#div3
+	<div id="div4" class="c1">
+	div ID:#div4
+	</div>
+	
+</div>	
+
+<h1 id="h1" class="c1">
+h1
+</h1>
+<h1 class="c1">
+h1
+</h1>
+</div>
+
+
+<br><br>
+<button id="btn">Click</button>
+
+<script src="jquery-3.6.0.min.js"></script>
+
+
+<script>
+
+
+$(function(){
+
+
+$("#btn").click(function(){
+
+//////////ACCESS TO PARENT(ANCESTOR)///////////////////////////
+////parent() -> provides access to the parent of the element using the function 
+////here it accesses the element p
+/*
+$("span").parent().css({ 
+"border":"2px solid red",
+"color":"red"
+});
+*/
+
+
+//parents()-> provides access to the all parent of the element using the function (include body & html tags)
+/*
+$("li").parents().css({ 
+"border":"2px solid red",
+"color":"red"
+});
+*/
+
+//parents("......") -> provides access to the choosen parent of the element using the function 
+/*
+$("span").parents("div").css({ 
+"border":"2px solid red",
+"color":"red"
+});
+*/
+
+//parents("#...") -> also used with id
+/*
+$("span").parents("#div2").css({ 
+"border":"2px solid red",
+"color":"red"
+});
+*/
+
+//parentsUntil()-> Covers all parents up to where given
+/*
+$("span").parentsUntil("#div2").css({ //#div2 not included (until the #div2)
+"border":"2px solid red",
+"color":"red"
+});
+*/
+
+//parentsUntil()-> also used with tag name
+/*
+$("span").parentsUntil("body").css({ 
+"border":"2px solid red",
+"color":"red"
+});
+*/
+
+//////ACCESS TO CHILD (Descendants)////////////////
+//children()-> Affects children of division with id div1
+//#div2,#div3,h1
+/*
+$("#div1").children().css({ 
+"border":"2px solid red",
+"color":"red"
+});
+*/
+
+//children("...")-> Affects named children of division with id div1
+/*
+$("#div1").children("div").css({ 
+"border":"2px solid red",
+"color":"red"
+});
+*/
+
+
+//children("#...") -> also used with element id
+/*
+$("#div1").children("#div2").css({ 
+"border":"2px solid red",
+"color":"red"
+});
+*/
+
+
+///!!!!!
+///$("#div1").children("#div4") isnt work
+///div4 is child of div3.div4 is not directly linked to div1 so no selection can be made
+//find() ->Makes every element inside div1 selectable
+
+/*
+$("#div1").find("#div4").css({ 
+"border":"2px solid red",
+"color":"red"
+});
+
+$("#div1").find("span").css({ 
+"border":"2px solid red",
+"color":"red"
+});
+
+$("#div1").find("div").css({ 
+"border":"2px solid red",
+"color":"red"
+});
+*/
+
+//find(*) -> Affects all elements below div1
+/*
+$("#div1").find("*").css({ 
+"border":"2px solid red",
+"color":"red"
+});
+*/
+
+//////// ACCESS TO SIBLINGS ///////
+//div2 , div3 and h1 are siblings
+
+//siblings() -> Affects #div3 and h1
+/*
+$("#div2").siblings().css({
+"border":"2px solid red",
+"color":"red"
+});
+*/
+
+//choose a sibling 
+/*
+$("#div2").siblings("h1").css({ //(choose all h1 tags element)
+"border":"2px solid red",
+"color":"red"
+});
+*/
+
+//next() ->  select first sibling after div2
+/*
+$("#div2").next().css({ //affect div3
+"border":"2px solid red",
+"color":"red"
+});
+*/
+
+
+//nextAll() ->  select all siblings like sibling() feature
+/*
+$("#div2").nextAll().css({ //affect div3 and h1 tags 
+"border":"2px solid red",
+"color":"red"
+});
+*/
+
+//nextAll("..") also used with parameter
+/*
+$("#div2").nextAll("#div3").css({ //affect div3
+"border":"2px solid red",
+"color":"red"
+});
+*/
+
+//nextUntil() -> affect until h1 (h1 not include)
+/*
+$("#div2").nextUntil("h1").css({ 
+"border":"2px solid red",
+"color":"red"
+});
+*/
+
+//prev() -> selects previous sibling before h1
+/*
+//affect div3
+$("#h1").prev().css({ 
+"border":"2px solid red",
+"color":"red"
+});
+*/
+
+//prevAll() -> Select all previous sibling before h1
+//affect div3 and div2
+/*
+$("#h1").prevAll().css({ 
+"border":"2px solid red",
+"color":"red"
+});
+*/
+
+//prevAll(..) also used with parameter
+/*
+$("#h1").prevAll("#div2").css({ 
+"border":"2px solid red",
+"color":"red"
+});
+*/
+
+//prevUntil()
+//affect until div2
+$("#h1").prevUntil("#div2").css({ 
+"border":"2px solid red",
+"color":"red"
+});
+
+
+});
+
+
+});
+
+
+</script>
+
+</body>
+</html>
