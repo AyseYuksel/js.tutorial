@@ -1,0 +1,126 @@
+<html>
+<head>
+
+
+<title>jquery11 Filtering </title>
+
+<style>
+
+.class1{
+display:block;
+border:2px solid lightgrey;
+color:gray;
+padding:5px;
+margin:15px;
+font-weight:bold;
+height:100px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div id="div1" class="class1 c1">
+#div1 <br><br>.c1
+</div>
+
+<div id="div2" class="class1 c2">
+#div2 <br><br>.c2
+</div>
+
+
+<div id="div3" class="class1 c3">
+#div3 <br><br>.c3
+</div>
+
+
+
+<br><br>
+<button id="btn">Click</button>
+
+<script src="jquery-3.6.0.min.js"></script>
+
+<script>
+
+
+$(function(){
+
+$("#btn").click(function(){
+
+//$("div").first()-> accesses the first division in the document
+/*
+$("div").first().css({
+"border":"2px solid green",
+"color":"green"
+});
+*/
+
+////$("div").last()-> accesses the last division in the document
+/*
+$("div").last().css({
+"border":"2px solid green",
+"color":"green"
+});
+*/
+
+//$("div").eq(1) ->
+//access to divisions in the document by index number
+/*
+$("div").eq(1).css({
+"border":"2px solid green",
+"color":"green"
+});
+*/
+
+////If an invalid index is entered, the document will not change.
+
+//////
+
+//filter()->
+//Allows changes to be made on elements with the entered property.
+
+/*
+$("div").filter(".class1").css({ 
+//Affects divisions with the class1 attribute
+"border":"2px solid green",
+"color":"green"
+});
+*//*
+$("div").filter(".c1").css({
+//Affects divisions with the c1 attribute
+//where the filtering is based on having the c1 property.
+"border":"2px solid green",
+"color":"green"
+});
+*/
+
+//not() -> is the opposite of filter() feature
+/*
+$("div").not(".c1").css({
+//Affects divisions whose classname is not c1
+//where the filtering is based on having the c1 property.
+"border":"2px solid green",
+"color":"green"
+});
+*/
+
+
+
+
+
+});
+
+
+
+
+});
+
+
+
+</script>
+
+
+</body>
+</html>
