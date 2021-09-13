@@ -1,0 +1,130 @@
+<html>
+<head>
+<title>jquery animate</title>
+
+<style>
+
+.class1{
+width:200px;
+height:200px;
+margin-bottom:15px;
+font-size:32px;
+position:relative;
+text-align:center;
+
+}
+
+
+</style>
+
+
+</head>
+
+<body>
+
+<button id="btn1">Animate</button>
+<button id="btn2">Dynamic Animate</button>
+<button id="btn3">Toggle</button>
+<button id="btn4">Sort</button>
+<button id="btn5">Change bgcolor</button>
+<br><br><br>
+
+<div id="div1" class="class1" style="background-color:blue">Javascript</div>
+
+
+
+<script src="jquery-3.6.0.min.js"></script>
+
+
+<script>
+
+$(function(){
+
+$("#btn1").click(function(){
+
+	$("#div1").animate({ //its not affect to background-color or color
+	//this values are not dynamic.this change happens once
+	left:"200px",
+	top:"200px",
+	width:"400px",
+	height:"400px",
+	fontSize:"64px",
+	},3000);
+
+});
+
+$("#btn2").click(function(){
+
+	$("#div1").animate({ //its not affect to background-color or color
+	//this values are dynamic.this change happens every time to click to button
+	top:"+=10px",
+	width:"+=20px",
+	height:"-=10px",	
+	},3000);
+});
+
+
+$("#btn3").click(function(){
+
+	$("#div1").animate({ //its not affect to background-color or color
+	//this values are dynamic.this change happens every time to click to button
+	//Each time the button is pressed, it will hide the width and height value respectively and make it visible again.
+	width:"toggle",
+	height:"toggle"	
+	},3000);
+});
+
+$("#btn4").click(function(){
+
+	//It will expand first, and when the expansion is over, it will lengthen. 
+	//When the lengthening is finished, the width will decrease and then the length will be shortened.
+
+	$("#div1").animate({width:"500px"},3000);
+	$("#div1").animate({height:"500px"},3000);
+	$("#div1").animate({width:"300px"},3000);
+	$("#div1").animate({height:"300px"},3000);
+	//events will take place in the order in which they were written
+});
+
+$("#btn5").click(function(){
+
+	$("#div1").animate({width:"500px"},3000);
+	//With queue, you can stop the animation and perform extra actions.
+	$("#div1").queue(function(){
+	$(this).css("background-color","yellow");
+	$(this).dequeue(); //with dequeue, the command to continue animations is given.
+	});
+	
+	
+	$("#div1").animate({height:"500px"},3000);
+	
+	$("#div1").queue(function(){
+	$(this).css("background-color","gray");
+	$(this).dequeue();
+	});
+	
+	
+	$("#div1").animate({width:"300px"},3000);
+	$("#div1").queue(function(){
+	$(this).css("background-color","green");
+	$(this).dequeue();
+	});
+	
+	$("#div1").animate({height:"300px"},3000);
+	$("#div1").queue(function(){
+	$(this).css("background-color","brown");
+	$(this).dequeue();
+	});
+	
+	//events will take place in the order in which they were written
+});
+
+});
+
+
+
+
+</script>
+
+</body>
+</html>
