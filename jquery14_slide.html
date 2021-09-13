@@ -1,0 +1,69 @@
+<html>
+<head>
+<title>jquery slide</title>
+
+<style>
+
+.class1{
+width:100%;
+height:450px;
+margin-bottom:15px;
+}
+
+#div2{
+width:100%;
+height:100px;
+display:none;
+background-color:yellow;
+}
+
+</style>
+
+
+</head>
+<body>
+
+<div id="div1" class="class1" style="background-color:blue"></div>
+<div id="div2"></div>
+<br><br>
+
+<button id="btn1">SlideUp</button>
+<button id="btn2">SlideDown</button>
+<button id="btn3">SlideToggle</button>
+
+<script src="jquery-3.6.0.min.js"></script>
+
+<script>
+$("#btn1").click(function(){
+
+//div1 disappears from bottom to top when button is pressed
+$("#div1").slideUp(3000);//3000 ms=3 second -> also it can be fast,slow
+});
+
+
+
+$("#btn2").click(function(){
+
+//when the button is pressed, div1 will be visible again from top to bottom
+$("#div1").slideDown(3000);
+});
+
+
+$("#btn3").click(function(){
+
+//If div1 is visible, it will disappear from the bottom up when the button is pressed, if div1 is not visible, it will reappear from top to bottom.
+$("#div1").slideToggle(3000);
+
+
+/////!!!
+//For the element showing display:none property in the css section,
+//the slideToggle or slideDown propertys are used to enable the element to be displayed when clicking the button while the element is not initially visible.
+$("#div2").slideToggle(2000);
+});
+
+
+
+</script>
+
+</body>
+</html>
