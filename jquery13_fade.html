@@ -1,0 +1,89 @@
+<html>
+<head>
+<title>jquery fade</title>
+
+<style>
+
+.class1{
+width:100%;
+height:150px;
+margin-bottom:15px;
+}
+
+
+</style>
+
+
+</head>
+<body>
+
+<div id="div1" class="class1" style="background-color:blue"></div>
+<div id="div2" class="class1" style="background-color:green"></div>
+<div id="div3" class="class1" style="background-color:red"></div>
+
+<br><br>
+
+<button id="btn1">FadeOut</button>
+<button id="btn2">FadeIn</button>
+<button id="btn3">FadeToggle</button>
+<button id="btn4">FadeTo</button>
+
+<script src="jquery-3.6.0.min.js"></script>
+
+
+<script>
+
+$(function(){
+
+$("#btn1").click(function(){
+//div1 element disappears when FadeOut button is pressed
+//$("#div1").fadeOut();
+
+$("#div1").fadeOut("slow");
+$("#div2").fadeOut("fast");
+$("#div3").fadeOut(2000); //2000ms= 2 second
+});
+
+
+
+$("#btn2").click(function(){
+//When the button is pressed, the div1 element becomes visible again
+//$("#div1").fadeIn();
+
+$("#div1").fadeIn("slow");
+$("#div2").fadeIn("fast");
+$("#div3").fadeIn(2000); //2000ms= 2 second
+});
+
+
+
+$("#btn3").click(function(){
+//If div1 is visible when the button is pressed it will be invisible, if div1 is not visible it will be visible again
+//$("#div1").fadeToggle();
+
+$("#div1").fadeToggle("slow");
+$("#div2").fadeToggle("fast");
+$("#div3").fadeToggle(2000); //2000ms= 2 second
+});
+
+
+$("#btn4").click(function(){
+//It changes the opacity when the button is pressed.
+//first parameter realization time, second parameter opacity rate
+//$("#div1").fadeTo("slow",0.4);
+$("#div2").fadeTo("fast",0.5);
+$("#div3").fadeTo(3000,0.8); 
+
+//delay ->It waits as long as the delay parameter, then it starts to perform the operation.
+$("#div1").delay(2000).fadeTo("slow",0.4);
+});
+
+
+});
+
+
+</script>
+
+
+</body>
+</html>
