@@ -1,0 +1,75 @@
+<html>
+<head>
+
+<title>jquery call back function</title>
+
+
+<style>
+ 
+.c1{
+width:100%;
+height:500px;
+background-color:green;
+margin-bottom:15px;
+font-size:32px;
+position:relative;
+
+} 
+
+
+</style>
+
+
+</head>
+
+
+<body>
+
+<button id="btn1">Start</button>
+<br><br>
+
+<div id="div1" class="c1"></div>
+
+
+
+<script src="jquery-3.6.0.min.js"></script>
+
+
+<script>
+
+
+$(function(){
+
+$("#btn1").click(function(){
+
+setInterval(function(){
+
+
+//Execute the operation within 2 seconds, 
+//then run the function in the 2nd parameter.
+$("#div1").hide(2000,function(){ //CALL BACK FUNCTION
+
+	$(this).show(2000,function(){
+		$(this).fadeOut(2000,function(){
+				$(this).fadeIn(2000,function(){
+					$(this).slideUp(2000,function(){
+						$(this).slideDown(2000);
+					});
+				});
+			});
+
+		});
+
+	});	
+},12000);
+});
+
+
+});
+
+
+</script>
+
+
+</body>
+</html>
