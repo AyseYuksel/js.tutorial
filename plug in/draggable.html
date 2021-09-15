@@ -1,0 +1,92 @@
+<html>
+<head>
+<title>jquery draggable</title>
+
+<style>
+
+.c1{
+width:50%;
+height:400px;
+background-color:yellow;
+padding:10px;
+}
+
+#div2{
+width:100px;
+height:100px;
+background-color:green;
+color:white;
+text-align:center;
+}
+
+#p{
+position:relative;
+top:80px;
+height:20px;
+font-size:32px;
+}
+
+
+</style>
+
+</head>
+
+<body>
+
+<div id="div1" class="c1">
+	<div id="div2">DRAG 
+	<p id="p1"></p>
+	</div>	
+</div>	
+
+
+<script src="jquery-3.6.0.min.js"></script>
+<script src="jquery-ui.min.js"></script>
+
+<script>
+
+$(function(){
+
+//object to be dragged has id div2
+//draggable() -> Gives the object the property of being dragged
+$("#div2").draggable({
+
+//axis:"y" //It gives drag feature only in y-axis (up and down direction).
+//axis:"x" //It gives drag feature only in x-axis (right-left-direction)
+
+axis:"both", //this is the default feature. so it can be dragged in all directions. has the same feature without this feature being written
+
+//containment:"parent" //Provides the ability to be dragged within its parent boundaries
+containment:"#div1", //Provides the ability to be dragged within element with id div1 boundaries
+
+
+start:function(){ //actions when drag starts
+$("#p1").html("START");
+},
+
+stop:function(){//actions when drag ends
+$("#p1").html("STOP");
+$("#div1").css("background-color","yellow");
+},
+
+drag:function(){ //actions while dragging
+$("#div1").css("background-color","blue");
+},
+
+cursor:"move", //cursor type while dragging
+
+cursorAt:{ //focusing the mouse cursor on the specified point
+top:-5,
+left:-5
+}
+
+});
+
+
+});
+
+</script>
+
+
+</body>
+</html>
