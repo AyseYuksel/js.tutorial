@@ -1,0 +1,73 @@
+<html>
+<head>
+<title>jquery selectable</title>
+
+<style>
+
+#div1{
+width:100px;
+height:100px;
+background-color:green;
+}
+
+li{
+margin:20px;
+height:50px;
+width:50px;
+border:2px solid black;
+float:left;
+}
+
+#mylist .ui-selecting { background: #FECA40; }
+#mylist .ui-selected { background: #F39814; color: white; }
+
+</style>
+
+
+</head>
+
+
+<body>
+
+<ol id="mylist" style="line-height:180%;" >
+<li type="none"> Item 1 </li>
+<li type="none"> Item 2 </li>
+<li type="none"> Item 3 </li>
+<li type="none"> Item 4 </li>
+<li type="none"> Item 5 </li>
+<li type="none"> Item 6 </li>
+</ol>
+
+
+<br><br>
+
+<p id="p1">.</p>
+
+
+<script src="jquery-3.6.0.min.js"></script>
+<script src="jquery-ui.min.js"></script>
+
+<script>
+
+
+$(function(){
+
+$("#mylist").selectable({
+stop:function(){
+var result = $( "#p1" ).empty();
+$( ".ui-selected", this ).each(function() {
+    var index = $( "#mylist li" ).index( this );
+    result.append( " #" + ( index + 1 ) );
+});
+
+}
+});
+});
+
+
+</script>
+
+
+
+</body>
+</html>
