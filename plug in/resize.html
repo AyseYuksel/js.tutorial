@@ -1,0 +1,81 @@
+<html>
+<head>
+<title>jquery resize</title>
+
+<style>
+
+.divclass{
+width:100px;
+height:100px;
+margin-top:50px;
+margin-left:450px;
+background-color:green;
+position:relative;
+}
+
+#div3{
+margin-left:50%;
+width:200px;
+height:200px;
+background-color:gray;
+position:relative;
+}
+
+
+#div2{
+width:70px;
+height:70px;
+background-color:green;
+padding:10px;
+
+
+}
+
+</style>
+
+
+</head>
+
+
+<body>
+<div id="div1" class="divclass"></div>
+<br><br>
+
+<div id="div3">
+<div id="div2">RESIZE</div>
+</div>
+
+
+<script src="jquery-3.6.0.min.js"></script>
+<script src="jquery-ui.min.js"></script>
+
+
+
+<script>
+
+$(function(){
+
+$("#div1").resizable({
+	animate:true,
+	maxHeight: 250,
+    maxWidth: 350,
+    minHeight: 150,
+    minWidth: 200
+});
+
+
+$("#div3").resizable({
+ghost:true,
+containment:"#div2"
+});
+
+
+
+
+});
+
+</script>
+
+
+</body>
+</html>
