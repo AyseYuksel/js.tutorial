@@ -1,0 +1,85 @@
+<html>
+<head>
+<title>jquery accordion</title>
+
+<style>
+
+h3{
+border:3px solid black;
+width:200px;
+height:20px;
+background-color:tomato;
+}
+
+p{
+border:3px solid black;
+width:300px;
+height:50px;
+background-color:gray;
+}
+
+
+</style>
+
+
+</head>
+
+
+
+<body>
+
+
+<div id="div1">
+<h3>INFORMATION 1 ↓ </h3>
+<div>
+<p class="paragraph">
+Australia is the 6th largest country in the world
+</p></div> 
+
+<h3>INFORMATION 2 ↓ </h3>
+<div>
+<p class="paragraph">
+The Australian flag has 6 stars
+</p></div> 
+
+<h3>INFORMATION 3  ↓ </h3>
+<div>
+<p class="paragraph">
+Australia is the second country to grant women the right to vote.
+</p></div> 
+
+<h3>INFORMATION 4 ↓ </h3>
+<div>
+<p class="paragraph">
+The capital of Australia is Canberra and the largest city is Sydney.
+</p></div>
+
+
+
+</div> 
+
+
+
+<script src="jquery-3.6.0.min.js"></script>
+<script src="jquery-ui.min.js"></script>
+
+
+<script>
+
+$(function(){
+
+    $( "#div1" ).accordion({
+	heightStyle: "content"
+	});
+	
+});
+
+
+
+
+
+</script>
+
+
+</body>
+</html>
