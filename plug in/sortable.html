@@ -1,0 +1,55 @@
+<html>
+<head>
+<title>jquery sortable</title>
+
+<style>
+
+
+li{
+margin:20px;
+height:50px;
+width:50px;
+border:2px solid black;
+float:left;
+background-color:tomato;
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+<ol id="mylist" style="line-height:180%;" >
+<li type="none"> Item 1 </li>
+<li type="none"> Item 2 </li>
+<li type="none"> Item 3 </li>
+<li type="none"> Item 4 </li>
+<li type="none"> Item 5 </li>
+<li type="none"> Item 6 </li>
+</ol>
+
+
+<script src="jquery-3.6.0.min.js"></script>
+<script src="jquery-ui.min.js"></script>
+
+<script>
+
+$(function(){
+
+$("#mylist").sortable();
+
+
+});
+
+
+
+
+
+
+</script>
+
+
+</body>
+</html>
