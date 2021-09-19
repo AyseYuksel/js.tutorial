@@ -1,0 +1,67 @@
+<html>
+<head>
+<title>jquery autocomplete</title>
+
+<style>
+
+#log{
+width:300px;
+height:300px;
+border:2px solid black;
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+<div id="div1">
+<label for="language">Enter a language : </label>
+<input id="language">
+</div>
+<br><br><br>
+
+<div id="log"></div>
+
+
+
+
+<script src="jquery-3.6.0.min.js"></script>
+<script src="jquery-ui.min.js"></script>
+
+
+
+<script>
+$(function(){
+
+var availableLanguage=[
+"Turkish",
+"French",
+"Spanish",
+"English",
+"German",
+"Italian"
+];
+
+function log( message ) {
+      $( "<div/>" ).text( message ).prependTo( "#log" );
+      $( "#log" ).attr( "scrollTop", 0 );
+    }
+
+$("#language").autocomplete({
+source:availableLanguage,
+select: function( event, ui ) {
+            log( ui.item ?
+              "Selected: " + ui.item.value:
+              "Nothing selected, input was " + this.value );
+}
+
+});
+
+});
+
+</script>
+</body>
+</html>
