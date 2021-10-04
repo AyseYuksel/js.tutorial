@@ -1,0 +1,55 @@
+<html>
+<head>
+<title>jquery datepicker</title>
+</head>
+
+<body>
+
+
+<script src="jquery-3.6.0.min.js"></script>
+<script src="jquery-ui.min.js"></script>
+
+<p>Date : <input type="text" id="datepicker1"></p>
+<br><br><br><br><br><br><br><br><br><br>
+<p>a datepicker with specific ranges</p>
+<p>Date :  <input type="text" id="datepicker2">
+<input type="text" id="alternate"></p>
+
+
+<script>
+$(function(){
+$("#datepicker1").datepicker({
+
+//Allows day and month selection with slider
+changeMonth:true,
+changeYear:true,
+
+//pressing the calendar icon next to the box offers date selection
+showOn:"button",
+buttonImage:"images/calendar.gif",
+buttonImageOnly:true,
+buttonText:"select date",
+
+//
+showWeek:true
+
+});
+
+$("#datepicker2").datepicker({
+//Allows you to choose between 20 days back and 1 month 10 days ahead from the current day
+minDate:-20,
+maxDate:"+1M +10D",
+
+//Converts the selected date to text as day month year and writes it in the box on the side.
+altField:"#alternate",
+altFormat:"DD, d MM,yy"
+
+});
+
+
+});
+
+</script>
+
+</body>
+</html>
